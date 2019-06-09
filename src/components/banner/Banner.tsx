@@ -6,7 +6,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-const Banner: React.FC<any> = ({ callFetchIssues }) => {
+const Banner: React.FC<any> = () => {
   return (
     <Segment inverted
       textAlign='center'
@@ -30,7 +30,6 @@ const Banner: React.FC<any> = ({ callFetchIssues }) => {
               top: 40,
               zIndex: 100,
             }}
-            onClick={() => callFetchIssues()}
           >
             Search
           </Button>
