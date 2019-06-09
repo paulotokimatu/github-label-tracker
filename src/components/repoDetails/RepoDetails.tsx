@@ -8,6 +8,7 @@ import {
 
 import { issueActions, labelActions } from '../../redux/actions';
 import IssueLabel from '../IssueLabel/IssueLabel';
+import IssueList from '../IssueList/IssueList';
 
 const mapStateToProps = (state: any) => {
   return {
@@ -16,15 +17,16 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-const RepoDetails: React.FC<any> = ({ labels, repo, fetchLabels, fetchIssues }) => {
-  const newLabels = labels[repo] ? labels[repo] : [];
+const RepoDetails: React.FC<any> = ({ labels, issues, repo, fetchLabels, fetchIssues }) => {
   return (
     <Segment>
-      {repo}
+      { repo }
       <Button onClick={() => fetchLabels(repo)}>Check labels</Button>
-      {newLabels.map((label: any) => {
+      { labels[repo] && labels[repo].map((label: any) => {
         return <IssueLabel key={label.name} label={label} repo={repo} fetchIssuesWithLabel={fetchIssues} />;
       }) }
+      <div>-----</div>
+      { (issues !== undefined && issues.repos[repo]) && <IssueList issues={issues.repos[repo]} /> }
     </Segment>
   );
 };

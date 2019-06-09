@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import {
   Button,
+  Container,
   Input,
-  Segment,
 } from 'semantic-ui-react';
 import RepoDetails from '../RepoDetails/RepoDetails';
 
@@ -20,13 +20,13 @@ const RepoSection: React.FC<any> = ({ repos, onClick }) => {
   }
 
   return (
-    <Segment>
+    <Container>
       <Input value={repoName} placeholder='Repository name (org/repo)' onChange={(e) => setRepoName(e.target.value)} />
       <Button onClick={onAddRepo}>Add</Button>
       {
         reposArray.map((repo: string) => <RepoDetails key={repo} repo={repo}></RepoDetails>)
       }
-    </Segment>
+    </Container>
   );
 }
 

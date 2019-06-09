@@ -8,7 +8,6 @@ import {
 import './App.css';
 import Banner from './components/Banner/Banner';
 import RepoSection from './components/RepoSection/RepoSection';
-import IssueList from './components/IssueList/IssueList';
 import Topbar from './components/topbar/Topbar';
 
 import { issueActions, repoActions } from './redux/actions';
@@ -25,7 +24,10 @@ const App: React.FC<any> = ({ issues, repos, addRepo }) => {
     <div className='App'>
       <Topbar />
       <Banner />
-      <Container style={{ padding: 16, paddingTop: 64 }}>
+      <Container style={{ paddingTop: 64 }}>
+        <RepoSection onClick={addRepo} repos={repos} />
+      </Container>
+      {/* <Container style={{ padding: 16, paddingTop: 64 }}>
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
             <Grid.Column>
@@ -33,8 +35,7 @@ const App: React.FC<any> = ({ issues, repos, addRepo }) => {
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </Container>
-      <IssueList issues={issues.repos} />
+      </Container> */}
     </div>
   );
 };
