@@ -4,13 +4,14 @@ import {
   Input,
   Segment,
 } from 'semantic-ui-react';
+import RepoDetails from '../repoDetails/RepoDetails';
 
 const RepoSection: React.FC<any> = ({ repos, onClick }) => {
-  const [repoName, setRepoName] = useState<any>('');
+  const [repoName, setRepoName] = useState<string>('');
   const reposArray: string[] = [];
 
   repos.forEach((repo: string) => {
-    reposArray.push(repo);  
+    reposArray.push(repo);
   });
 
   const onAddRepo = () => {
@@ -23,7 +24,7 @@ const RepoSection: React.FC<any> = ({ repos, onClick }) => {
       <Input value={repoName} placeholder='Repository name (org/repo)' onChange={(e) => setRepoName(e.target.value)} />
       <Button onClick={onAddRepo}>Add</Button>
       {
-        reposArray.map((repo: string) => <div key={repo}>{repo}</div>)
+        reposArray.map((repo: string) => <RepoDetails key={repo} repo={repo}></RepoDetails>)
       }
     </Segment>
   );
