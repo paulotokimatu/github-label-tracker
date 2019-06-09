@@ -6,12 +6,12 @@ import {
 } from 'semantic-ui-react';
 
 import './App.css';
-import Banner from './components/banner/Banner';
-import RepoSection from './components/repoSection/RepoSection';
-import ResultSection from './components/resultSection/ResultSection';
+import Banner from './components/Banner/Banner';
+import RepoSection from './components/RepoSection/RepoSection';
+import IssueList from './components/IssueList/IssueList';
 import Topbar from './components/topbar/Topbar';
 
-import { repoActions, issueActions } from './redux/actions';
+import { issueActions, repoActions } from './redux/actions';
 
 const mapStateToProps = (state: any) => {
   return {
@@ -34,10 +34,10 @@ const App: React.FC<any> = ({ issues, repos, addRepo }) => {
           </Grid.Row>
         </Grid>
       </Container>
-      <ResultSection issues={issues.repos} />
+      <IssueList issues={issues.repos} />
     </div>
   );
-}
+};
 
 export default connect(mapStateToProps, {
   addRepo: repoActions.addRepo,

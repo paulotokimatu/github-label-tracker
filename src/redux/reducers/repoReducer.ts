@@ -2,7 +2,7 @@ import {
   ADD_REPO,
   DELETE_REPO,
   EDIT_REPO,
-} from '../actions/repo';
+} from '../actions/repoActions';
 
 const repoReducer = (state = new Set(), action: any) => {
   switch (action.type) {

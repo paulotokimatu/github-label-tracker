@@ -1,6 +1,6 @@
 import {
   SET_LABELS,
-} from '../actions/label';
+} from '../actions/labelActions';
 
 const labelReducer = (state = {}, action: any) => {
   switch (action.type) {

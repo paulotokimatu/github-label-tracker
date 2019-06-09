@@ -1,6 +1,6 @@
 import {
   GET_ISSUES,
-} from '../actions/issue';
+} from '../actions/issueActions';
 
 const initialState = {
   isFetching: false,

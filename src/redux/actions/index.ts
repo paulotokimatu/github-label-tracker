@@ -1,6 +1,6 @@
-import * as issueActions from './issue';
-import * as labelActions from './label';
-import * as repoActions from './repo';
+import * as issueActions from './issueActions';
+import * as labelActions from './labelActions';
+import * as repoActions from './repoActions';
 
 export {
   issueActions,

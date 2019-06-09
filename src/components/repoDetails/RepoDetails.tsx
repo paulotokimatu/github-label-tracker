@@ -1,11 +1,12 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import {
   Button,
   Input,
   Segment,
 } from 'semantic-ui-react';
-import { connect } from 'react-redux';
-import { labelActions, issueActions } from '../../redux/actions';
+
+import { issueActions, labelActions } from '../../redux/actions';
 import IssueLabel from '../IssueLabel/IssueLabel';
 
 const mapStateToProps = (state: any) => {
@@ -29,6 +30,6 @@ const RepoDetails: React.FC<any> = ({ labels, repo, fetchLabels, fetchIssues }) 
 };
 
 export default connect(mapStateToProps, {
-  fetchLabels: labelActions.fetchLabels,
   fetchIssues: issueActions.fetchIssues,
+  fetchLabels: labelActions.fetchLabels,
 })(RepoDetails);

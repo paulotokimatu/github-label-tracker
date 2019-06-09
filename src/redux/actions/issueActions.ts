@@ -32,8 +32,8 @@ export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => 
             title: data.title,
             updated_at: data.updated_at,
             url: data.url,
-          }
-        })
+          };
+        });
         dispatch(getIssuesOfRepo(repo, parsedResponseData));
       },
       (error: string) => console.log('An error occurred.', error),

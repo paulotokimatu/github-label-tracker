@@ -4,7 +4,7 @@ import {
   Input,
   Segment,
 } from 'semantic-ui-react';
-import RepoDetails from '../repoDetails/RepoDetails';
+import RepoDetails from '../RepoDetails/RepoDetails';
 
 const RepoSection: React.FC<any> = ({ repos, onClick }) => {
   const [repoName, setRepoName] = useState<string>('');

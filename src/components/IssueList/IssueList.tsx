@@ -3,7 +3,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-const ResultSection: React.FC<any> = ({ issues }) => {
+const IssueList: React.FC<any> = ({ issues }) => {
   const repoNames: string[] = Object.keys(issues);
   return (
     <Segment>
@@ -23,4 +23,4 @@ const ResultSection: React.FC<any> = ({ issues }) => {
   );
 }
 
-export default ResultSection;
+export default IssueList;
