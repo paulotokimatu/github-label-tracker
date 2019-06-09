@@ -6,6 +6,10 @@ import {
 import LabelBadge from '../LabelBadge/LabelBadge';
 
 const LabelList: React.FC<any> = ({ fetchIssues, repo, labels}) => {
+  if (labels === undefined || !labels[repo]) {
+    return null;
+  }
+
   return (
     <Segment>
       { labels[repo] && labels[repo].map((label: any) => {

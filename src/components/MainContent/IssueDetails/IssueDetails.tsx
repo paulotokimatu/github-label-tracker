@@ -5,7 +5,7 @@ import {
 
 const IssueDetails: React.FC<any> = ({ issues }) => {
   return (
-    <Segment>
+    <React.Fragment>
       {
         issues.map((issue: any) => (
           <div key={issue.url}>
@@ -16,8 +16,8 @@ const IssueDetails: React.FC<any> = ({ issues }) => {
           </div>
         ))
       }
-    </Segment>
+    </React.Fragment>
   );
-}
+};
 
 export default IssueDetails;

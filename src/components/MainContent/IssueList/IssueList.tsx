@@ -6,6 +6,10 @@ import {
 import IssueDetails from '../IssueDetails/IssueDetails';
 
 const IssueList: React.FC<any> = ({ issues, repo }) => {
+  if (issues === undefined || !issues.repos[repo]) {
+    return null;
+  }
+
   return (
     <Segment>
       {(issues !== undefined && issues.repos[repo]) && <IssueDetails issues={issues.repos[repo]} />}
