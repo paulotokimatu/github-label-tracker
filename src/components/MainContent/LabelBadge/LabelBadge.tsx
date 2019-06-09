@@ -3,7 +3,7 @@ import {
   Label,
 } from 'semantic-ui-react';
 
-const IssueLabel: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
+const LabelBadge: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
   return (
     <Label as='a' color='teal' tag onClick={() => fetchIssuesWithLabel(repo, label.name)}>
       {label.name}
@@ -11,4 +11,4 @@ const IssueLabel: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
   );
 };
 
-export default IssueLabel;
+export default LabelBadge;

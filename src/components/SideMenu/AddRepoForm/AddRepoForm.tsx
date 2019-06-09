@@ -4,30 +4,21 @@ import {
   Container,
   Input,
 } from 'semantic-ui-react';
-import RepoDetails from '../RepoDetails/RepoDetails';
 
-const RepoSection: React.FC<any> = ({ repos, onClick }) => {
+const AddRepoForm: React.FC<any> = ({ addRepo }) => {
   const [repoName, setRepoName] = useState<string>('');
-  const reposArray: string[] = [];
-
-  repos.forEach((repo: string) => {
-    reposArray.push(repo);
-  });
 
   const onAddRepo = () => {
-    onClick(repoName);
+    addRepo(repoName);
     setRepoName('');
-  }
+  };
 
   return (
     <Container>
       <Input value={repoName} placeholder='Repository name (org/repo)' onChange={(e) => setRepoName(e.target.value)} />
       <Button onClick={onAddRepo}>Add</Button>
-      {
-        reposArray.map((repo: string) => <RepoDetails key={repo} repo={repo}></RepoDetails>)
-      }
     </Container>
   );
 }
 
-export default RepoSection;
+export default AddRepoForm;

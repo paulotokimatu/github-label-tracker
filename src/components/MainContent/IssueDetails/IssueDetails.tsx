@@ -3,8 +3,7 @@ import {
   Segment,
 } from 'semantic-ui-react';
 
-const IssueList: React.FC<any> = ({ issues }) => {
-  console.log(2, issues)
+const IssueDetails: React.FC<any> = ({ issues }) => {
   return (
     <Segment>
       {
@@ -21,4 +20,4 @@ const IssueList: React.FC<any> = ({ issues }) => {
   );
 }
 
-export default IssueList;
+export default IssueDetails;

@@ -1,32 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {
-  Container,
-  Grid,
-} from 'semantic-ui-react';
 
 import './App.css';
-import Banner from './components/Banner/Banner';
-import RepoSection from './components/RepoSection/RepoSection';
-import Topbar from './components/topbar/Topbar';
 
-import { issueActions, repoActions } from './redux/actions';
+import MainContent from './components/MainContent/MainContent';
+import SideMenu from './components/SideMenu/SideMenu';
 
-const mapStateToProps = (state: any) => {
-  return {
-    issues: state.issueReducer,
-    repos: state.repoReducer,
-  };
-};
-
-const App: React.FC<any> = ({ issues, repos, addRepo }) => {
+const App: React.FC<any> = () => {
   return (
     <div className='App'>
-      <Topbar />
-      <Banner />
-      <Container style={{ paddingTop: 64 }}>
+      <SideMenu />
+      <MainContent />
+      {/* <Container style={{ paddingTop: 64 }}>
         <RepoSection onClick={addRepo} repos={repos} />
-      </Container>
+      </Container> */}
       {/* <Container style={{ padding: 16, paddingTop: 64 }}>
         <Grid divided='vertically'>
           <Grid.Row columns={2}>
@@ -40,7 +26,4 @@ const App: React.FC<any> = ({ issues, repos, addRepo }) => {
   );
 };
 
-export default connect(mapStateToProps, {
-  addRepo: repoActions.addRepo,
-  fetchIssues: issueActions.fetchIssues,
-})(App);
+export default App;
