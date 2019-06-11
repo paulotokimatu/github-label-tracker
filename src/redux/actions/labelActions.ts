@@ -22,7 +22,7 @@ export const setLabels = (repoName: string, labels: any) => (
 export const fetchLabels = (repoName: string) => (dispatch: any) => {
   // dispatch(requestStart());
 
-  return axios.get(`https://api.github.com/repos/${repoName}/labels`)
+  return axios.get(`https://api.github.com/repos/${repoName}/labels?per_page=100`)
     .then(
       (response: any) => {
         // dispatch(requestEnd());

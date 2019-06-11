@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import {
-  Menu,
+  Container,
 } from 'semantic-ui-react';
 
-import { issueActions, repoActions, uiActions, labelActions } from '../../redux/actions';
+import { issueActions, labelActions, repoActions, uiActions } from '../../redux/actions';
 import AddRepoForm from './AddRepoForm/AddRepoForm';
 import RepoList from './RepoList/RepoList';
 import UserMenu from './UserMenu/UserMenu';
@@ -18,11 +18,16 @@ const mapStateToProps = (state: any) => {
 
 const SideMenu: React.FC<any> = ({ repos, addRepo, fetchLabels, selectRepo, selectedRepo }) => {
   return (
-    <Menu fluid vertical tabular style={{ paddingTop: 32 }}>
-      <UserMenu/>
+    <div className='side-menu'>
+      <UserMenu />
       <AddRepoForm addRepo={addRepo} fetchLabels={fetchLabels} selectRepo={selectRepo} />
       <RepoList repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
-    </Menu>
+    </div>
+    // <Menu fluid vertical tabular style={{ paddingTop: 32 }}>
+    //   <UserMenu/>
+    //   <AddRepoForm addRepo={addRepo} fetchLabels={fetchLabels} selectRepo={selectRepo} />
+    //   <RepoList repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
+    // </Menu>
   );
 };
 

@@ -5,7 +5,7 @@ import {
 
 const LabelBadge: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
   return (
-    <Label as='a' color='teal' tag onClick={() => fetchIssuesWithLabel(repo, label.name)}>
+    <Label as='a' style={{ backgroundColor: '#' + label.color }} onClick={() => fetchIssuesWithLabel(repo, label.name)}>
       {label.name}
     </Label>
   );

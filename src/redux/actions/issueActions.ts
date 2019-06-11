@@ -31,7 +31,7 @@ export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => 
             comments: data.comments,
             title: data.title,
             updated_at: data.updated_at,
-            url: data.url,
+            url: data.html_url,
           };
         });
         dispatch(getIssuesOfRepo(repo, parsedResponseData));

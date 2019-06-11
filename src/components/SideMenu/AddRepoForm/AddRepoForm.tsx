@@ -6,7 +6,7 @@ import {
 } from 'semantic-ui-react';
 
 const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
-  const [repoName, setRepoName] = useState<string>('');
+  const [repoName, setRepoName] = useState<string>('axios/axios');
 
   const onAddRepo = () => {
     addRepo(repoName);
@@ -17,6 +17,9 @@ const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
 
   return (
     <Container style={{ paddingLeft: 16, paddingRight: 16 }}>
+      {/* <Input onChange={(e) => setRepoName(e.target.value)} placeholder='Repository name (org/repo)'
+        action={<Button onClick={onAddRepo}>Add</Button>}
+      /> */}
       <Input value={repoName} placeholder='Repository name (org/repo)' onChange={(e) => setRepoName(e.target.value)} />
       <Button onClick={onAddRepo}>Add</Button>
     </Container>

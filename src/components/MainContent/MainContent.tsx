@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import {
   Button,
   Container,
+  Divider,
 } from 'semantic-ui-react';
 
 import { issueActions, labelActions } from '../../redux/actions';
@@ -19,12 +20,12 @@ const mapStateToProps = (state: any) => {
 
 const MainContent: React.FC<any> = ({ fetchLabels, fetchIssues, issues, labels, selectedRepo }) => {
   return (
-    <Container>
-      <div>{ selectedRepo }</div>
-      <Button onClick={() => fetchLabels(selectedRepo)}>Check labels</Button>
-      <LabelList fetchIssues={fetchIssues} repo={selectedRepo} labels={labels} />
+    <div className='main'>
+      <h1>{ selectedRepo }</h1>
+      <LabelList fetchLabels={fetchLabels} fetchIssues={fetchIssues} selectedRepo={selectedRepo} labels={labels} />
+      <Divider />
       <IssueList repo={selectedRepo} issues={issues} />
-    </Container>
+    </div>
   );
 };
 

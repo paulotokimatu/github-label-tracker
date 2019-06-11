@@ -1,5 +1,6 @@
 import React from 'react';
 import {
+  List,
   Segment,
 } from 'semantic-ui-react';
 
@@ -12,7 +13,12 @@ const IssueList: React.FC<any> = ({ issues, repo }) => {
 
   return (
     <Segment>
-      {(issues !== undefined && issues.repos[repo]) && <IssueDetails issues={issues.repos[repo]} />}
+      <h3>
+        {issues.repos[repo].length} Issues
+      </h3>
+      <List divided inverted relaxed verticalAlign='middle'>
+        {(issues !== undefined && issues.repos[repo]) && <IssueDetails issues={issues.repos[repo]} />}
+      </List>
     </Segment>
   );
 };

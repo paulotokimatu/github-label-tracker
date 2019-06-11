@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Menu,
+  Container,
 } from 'semantic-ui-react';
 import RepoItem from '../RepoItem/RepoItem';
 
@@ -15,9 +15,9 @@ const RepoList: React.FC<any> = ({ repos, selectRepo, selectedRepo }) => {
     <React.Fragment>
       {
         reposArray.map((repoName: string) => (
-          <Menu.Item key={repoName} onClick={() => selectRepo(repoName)} active={selectedRepo === repoName}>
+          <Container key={repoName} onClick={() => selectRepo(repoName)}>
             <RepoItem repoName={repoName} />
-          </Menu.Item>
+          </Container>
         ))
       }
     </React.Fragment>

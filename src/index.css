@@ -1,4 +1,6 @@
 body {
+  color: white;
+  height: 100%;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -6,3 +8,43 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+#root, .app {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+.side-menu {
+  background-color: #2f2b30;
+  height: 100%;
+  width: 350px;
+}
+
+.main {
+  background-color: #3e363f;
+  padding: 1.5rem;
+  width: 100%;
+}
+
+.ui.segment {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.ui.input input {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.ui.label {
+  margin: 0.25rem;
+}
+
+.labels-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+/* https://support.discordapp.com/hc/article_attachments/360008423291/2_.jpg */
+/* https://lh3.googleusercontent.com/e4rdOOWVE8_mD02D5yzBli-X4oGX7My1ERy6IwbxOo2k2nrjm-CeTn66732obCp3vbIcvK9unQ=w640-h400-e365 */
+/* https://toitoit.com/profile */

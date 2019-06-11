@@ -1,6 +1,8 @@
 import React from 'react';
 import {
-  Segment,
+  Icon,
+  Label,
+  List,
 } from 'semantic-ui-react';
 
 const IssueDetails: React.FC<any> = ({ issues }) => {
@@ -8,12 +10,23 @@ const IssueDetails: React.FC<any> = ({ issues }) => {
     <React.Fragment>
       {
         issues.map((issue: any) => (
-          <div key={issue.url}>
-            <div>{issue.title}</div>
-            <div>{issue.comments}</div>
-            <div>{issue.updated_at}</div>
-            <div>{issue.url}</div>
-          </div>
+          <List.Item key={issue.url}>
+            <List.Content floated='right'>
+              <Label>
+                <Icon name='comment alternate outline' /> {issue.comments}
+              </Label>
+            </List.Content>
+            <List.Content>
+              <List.Header href={issue.url} as='a'>{issue.title}</List.Header>
+              <List.Description>{issue.updated_at}</List.Description>
+            </List.Content>
+          </List.Item>
+          // <div >
+          //   <div>{issue.title}</div>
+          //   <div>{issue.comments}</div>
+          //   <div>{issue.updated_at}</div>
+          //   <div>{issue.url}</div>
+          // </div>
         ))
       }
     </React.Fragment>

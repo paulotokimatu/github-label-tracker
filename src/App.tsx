@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid } from 'semantic-ui-react';
+import { Grid, Container } from 'semantic-ui-react';
 
 import './App.css';
 
@@ -8,8 +8,10 @@ import SideMenu from './components/SideMenu/SideMenu';
 
 const App: React.FC<any> = () => {
   return (
-    <div className='App' style={{ paddingLeft: 64, paddingRight: 64 }}>
-      <Grid divided='vertically'>
+    <div className='app'>
+      <SideMenu />
+      <MainContent />
+      {/* <Grid divided='vertically'>
         <Grid.Row>
           <Grid.Column width={6}>
             <SideMenu />
@@ -18,7 +20,7 @@ const App: React.FC<any> = () => {
             <MainContent />
           </Grid.Column>
         </Grid.Row>
-      </Grid>
+      </Grid> */}
     </div>
   );
 };
