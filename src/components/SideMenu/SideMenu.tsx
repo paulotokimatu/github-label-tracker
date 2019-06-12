@@ -11,23 +11,19 @@ import UserMenu from './UserMenu/UserMenu';
 
 const mapStateToProps = (state: any) => {
   return {
+    issues: state.issues,
     repos: state.repos,
     selectedRepo: state.ui.selectedRepo,
   };
 };
 
-const SideMenu: React.FC<any> = ({ repos, addRepo, fetchLabels, selectRepo, selectedRepo }) => {
+const SideMenu: React.FC<any> = ({ issues, repos, addRepo, fetchLabels, selectRepo, selectedRepo }) => {
   return (
     <div className='side-menu'>
-      <UserMenu />
+      {/* <UserMenu /> */}
       <AddRepoForm addRepo={addRepo} fetchLabels={fetchLabels} selectRepo={selectRepo} />
-      <RepoList repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
+      <RepoList issues={issues} repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
     </div>
-    // <Menu fluid vertical tabular style={{ paddingTop: 32 }}>
-    //   <UserMenu/>
-    //   <AddRepoForm addRepo={addRepo} fetchLabels={fetchLabels} selectRepo={selectRepo} />
-    //   <RepoList repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
-    // </Menu>
   );
 };
 

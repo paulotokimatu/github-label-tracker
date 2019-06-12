@@ -1,13 +1,22 @@
 import React from 'react';
 import {
-  Container,
+  Label,
+  List,
 } from 'semantic-ui-react';
 
-const RepoItem: React.FC<any> = ({ repoName }) => {
+const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, selectRepo }) => {
   return (
-    <Container>
-      { repoName }
-    </Container>
+    <List.Item onClick={() => selectRepo(repoName)}>
+      <List.Content floated='right'>
+        <Label>
+          {numberOfIssues}
+        </Label>
+      </List.Content>
+      <List.Content>
+        <List.Header>{repoName}</List.Header>
+        <List.Description>Label</List.Description>
+      </List.Content>
+    </List.Item>
   );
 };
 

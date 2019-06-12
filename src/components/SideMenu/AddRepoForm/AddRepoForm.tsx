@@ -16,7 +16,7 @@ const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
   };
 
   return (
-    <Container style={{ paddingLeft: 16, paddingRight: 16 }}>
+    <Container style={{ textAlign: 'center' }}>
       {/* <Input onChange={(e) => setRepoName(e.target.value)} placeholder='Repository name (org/repo)'
         action={<Button onClick={onAddRepo}>Add</Button>}
       /> */}

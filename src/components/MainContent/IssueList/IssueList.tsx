@@ -17,7 +17,7 @@ const IssueList: React.FC<any> = ({ issues, repo }) => {
         {issues.repos[repo].length} Issues
       </h3>
       <List divided inverted relaxed verticalAlign='middle'>
-        {(issues !== undefined && issues.repos[repo]) && <IssueDetails issues={issues.repos[repo]} />}
+        <IssueDetails issues={issues.repos[repo]} />
       </List>
     </Segment>
   );

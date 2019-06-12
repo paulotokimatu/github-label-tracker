@@ -21,12 +21,6 @@ const IssueDetails: React.FC<any> = ({ issues }) => {
               <List.Description>{issue.updated_at}</List.Description>
             </List.Content>
           </List.Item>
-          // <div >
-          //   <div>{issue.title}</div>
-          //   <div>{issue.comments}</div>
-          //   <div>{issue.updated_at}</div>
-          //   <div>{issue.url}</div>
-          // </div>
         ))
       }
     </React.Fragment>

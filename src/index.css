@@ -18,6 +18,8 @@ body {
 .side-menu {
   background-color: #2f2b30;
   height: 100%;
+  padding: 1.5rem;
+  /* text-align: center; */
   width: 350px;
 }
 
