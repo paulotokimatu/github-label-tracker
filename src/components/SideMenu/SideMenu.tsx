@@ -11,8 +11,8 @@ import UserMenu from './UserMenu/UserMenu';
 
 const mapStateToProps = (state: any) => {
   return {
-    repos: state.repoReducer,
-    selectedRepo: state.uiReducer.selectedRepo,
+    repos: state.repos,
+    selectedRepo: state.ui.selectedRepo,
   };
 };
 

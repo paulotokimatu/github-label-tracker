@@ -12,9 +12,9 @@ import LabelList from './LabelList/LabelList';
 
 const mapStateToProps = (state: any) => {
   return {
-    issues: state.issueReducer,
-    labels: state.labelReducer,
-    selectedRepo: state.uiReducer.selectedRepo,
+    issues: state.issues,
+    labels: state.labels,
+    selectedRepo: state.ui.selectedRepo,
   };
 };
 

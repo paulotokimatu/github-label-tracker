@@ -5,8 +5,8 @@ import repoReducer from './repoReducer';
 import uiReducer from './uiReducer';
 
 export default combineReducers({
-  issueReducer,
-  labelReducer,
-  repoReducer,
-  uiReducer,
+  issues: issueReducer,
+  labels: labelReducer,
+  repos: repoReducer,
+  ui: uiReducer,
 });
