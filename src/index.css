@@ -25,6 +25,7 @@ body {
 
 .main {
   background-color: #3e363f;
+  overflow: auto;
   padding: 1.5rem;
   width: 100%;
 }
@@ -50,3 +51,14 @@ body {
 /* https://support.discordapp.com/hc/article_attachments/360008423291/2_.jpg */
 /* https://lh3.googleusercontent.com/e4rdOOWVE8_mD02D5yzBli-X4oGX7My1ERy6IwbxOo2k2nrjm-CeTn66732obCp3vbIcvK9unQ=w640-h400-e365 */
 /* https://toitoit.com/profile */
+
+.no-content-page {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+
+.ui.segment.no-content-panel {
+  padding: 3rem;
+}

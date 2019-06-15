@@ -9,6 +9,7 @@ import {
 import { issueActions, labelActions } from '../../redux/actions';
 import IssueList from './IssueList/IssueList';
 import LabelList from './LabelList/LabelList';
+import NoContent from './NoContent/NoContent';
 
 const mapStateToProps = (state: any) => {
   return {
@@ -19,6 +20,14 @@ const mapStateToProps = (state: any) => {
 };
 
 const MainContent: React.FC<any> = ({ fetchLabels, fetchIssues, issues, labels, selectedRepo }) => {
+  if (!selectedRepo) {
+    return (
+      <div className='main'>
+        <NoContent />
+      </div>
+    );
+  }
+
   return (
     <div className='main'>
       <h1>{ selectedRepo }</h1>

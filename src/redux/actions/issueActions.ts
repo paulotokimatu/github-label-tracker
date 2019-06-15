@@ -29,6 +29,7 @@ export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => 
         const parsedResponseData = response.data.map((data: any) => {
           return {
             comments: data.comments,
+            created_at: data.created_at,
             title: data.title,
             updated_at: data.updated_at,
             url: data.html_url,

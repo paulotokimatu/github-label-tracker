@@ -8,13 +8,16 @@ import LabelBadge from '../LabelBadge/LabelBadge';
 
 const NoContent: React.FC<any> = () => {
   return (
-    <Segment>
-      a
-      {/* <Button onClick={() => fetchLabels(selectedRepo)}>Check labels</Button>
-      {labels[selectedRepo] && labels[selectedRepo].map((label: any) => {
-        return <LabelBadge key={label.name} label={label} repo={selectedRepo} fetchIssuesWithLabel={fetchIssues} />;
-      })} */}
-    </Segment>
+    <div className='no-content-page'>
+      <Segment className='no-content-panel'>
+        <h1>HelpWanted App</h1>
+        <p>Input a GitHub repository name</p>
+      </Segment>
+      <div>
+        <div>
+        </div>
+      </div>
+    </div>
   );
 };
 

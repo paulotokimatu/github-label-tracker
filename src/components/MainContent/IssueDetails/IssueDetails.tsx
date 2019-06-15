@@ -4,6 +4,7 @@ import {
   Label,
   List,
 } from 'semantic-ui-react';
+import { formatTime } from '../../../core/helpers';
 
 const IssueDetails: React.FC<any> = ({ issues }) => {
   return (
@@ -18,7 +19,9 @@ const IssueDetails: React.FC<any> = ({ issues }) => {
             </List.Content>
             <List.Content>
               <List.Header href={issue.url} as='a'>{issue.title}</List.Header>
-              <List.Description>{issue.updated_at}</List.Description>
+              <List.Description>
+                Created at: {formatTime(issue.created_at)} / Updated at: {formatTime(issue.updated_at)}
+              </List.Description>
             </List.Content>
           </List.Item>
         ))

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {
   Button,
-  Container,
+  Form,
   Input,
 } from 'semantic-ui-react';
 
@@ -16,13 +16,19 @@ const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
   };
 
   return (
-    <Container style={{ textAlign: 'center' }}>
+    <Form style={{ textAlign: 'center' }}>
       {/* <Input onChange={(e) => setRepoName(e.target.value)} placeholder='Repository name (org/repo)'
         action={<Button onClick={onAddRepo}>Add</Button>}
       /> */}
-      <Input value={repoName} placeholder='Repository name (org/repo)' onChange={(e) => setRepoName(e.target.value)} />
-      <Button onClick={onAddRepo}>Add</Button>
-    </Container>
+      <Form.Group>
+        <Form.Field>
+          <Input value={repoName} placeholder='Repository name (org/repo)'
+            onChange={(e) => setRepoName(e.target.value)}
+          />
+        </Form.Field>
+        <Button type='submit' onClick={onAddRepo}>Add</Button>
+      </Form.Group>
+    </Form>
   );
 };
 
