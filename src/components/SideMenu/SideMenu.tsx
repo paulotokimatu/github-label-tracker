@@ -1,35 +1,26 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import {
-  Container,
-} from 'semantic-ui-react';
+import styled from 'styled-components';
 
-import { issueActions, labelActions, repoActions, uiActions } from '../../redux/actions';
-import AddRepoForm from './AddRepoForm/AddRepoForm';
-import RepoList from './RepoList/RepoList';
-import UserMenu from './UserMenu/UserMenu';
+import Divider from 'shared/Divider';
+import LabelSection from './LabelSection/LabelSection';
+import RepoSection from './RepoSection/RepoSection';
 
-const mapStateToProps = (state: any) => {
-  return {
-    issues: state.issues,
-    repos: state.repos,
-    selectedRepo: state.ui.selectedRepo,
-  };
-};
+const StyledSideMenu = styled.div`
+  background-color: #201919;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
+  display: flex;
+  height: 100%;
+  width: 650px;
+`;
 
-const SideMenu: React.FC<any> = ({ issues, repos, addRepo, fetchLabels, selectRepo, selectedRepo }) => {
+const SideMenu: React.FC<any> = () => {
   return (
-    <div className='side-menu'>
-      {/* <UserMenu /> */}
-      <AddRepoForm addRepo={addRepo} fetchLabels={fetchLabels} selectRepo={selectRepo} />
-      <RepoList issues={issues} repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
-    </div>
+    <StyledSideMenu>
+      <RepoSection />
+      <Divider />
+      <LabelSection />
+    </StyledSideMenu>
   );
 };
 
-export default connect(mapStateToProps, {
-  addRepo: repoActions.addRepo,
-  fetchIssues: issueActions.fetchIssues,
-  fetchLabels: labelActions.fetchLabels,
-  selectRepo: uiActions.selectRepo,
-})(SideMenu);
+export default SideMenu;

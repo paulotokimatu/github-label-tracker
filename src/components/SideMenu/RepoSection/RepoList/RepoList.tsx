@@ -1,8 +1,7 @@
 import React from 'react';
-import {
-  Container,
-  List,
-} from 'semantic-ui-react';
+
+import FlexContainer from 'shared/FlexContainer';
+import SectionTitle from 'shared/SectionTitle';
 import RepoItem from '../RepoItem/RepoItem';
 
 const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) => {
@@ -13,16 +12,21 @@ const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) =>
   });
 
   return (
-    <List selection divided inverted verticalAlign='middle'>
+    <React.Fragment>
+      <FlexContainer alignItems='center'>
+        <SectionTitle>Repositories</SectionTitle>
+        <div className='divider-middle'></div>
+      </FlexContainer>
       {
         reposArray.map((repoName: string) => (
           <RepoItem key={repoName} repoName={repoName}
             selectRepo={selectRepo}
+            selectedRepo={selectedRepo}
             numberOfIssues={issues.repos[repoName] ? issues.repos[repoName].length : 0}
           />
         ))
       }
-    </List>
+    </React.Fragment>
   );
 }
 

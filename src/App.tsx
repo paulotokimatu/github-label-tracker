@@ -1,5 +1,4 @@
 import React from 'react';
-import { Grid, Container } from 'semantic-ui-react';
 
 import './App.css';
 
@@ -11,16 +10,6 @@ const App: React.FC<any> = () => {
     <div className='app'>
       <SideMenu />
       <MainContent />
-      {/* <Grid divided='vertically'>
-        <Grid.Row>
-          <Grid.Column width={6}>
-            <SideMenu />
-          </Grid.Column>
-          <Grid.Column width={10}>
-            <MainContent />
-          </Grid.Column>
-        </Grid.Row>
-      </Grid> */}
     </div>
   );
 };

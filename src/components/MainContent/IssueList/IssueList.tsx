@@ -1,9 +1,6 @@
 import React from 'react';
-import {
-  List,
-  Segment,
-} from 'semantic-ui-react';
 
+import SectionTitle from 'shared/SectionTitle';
 import IssueDetails from '../IssueDetails/IssueDetails';
 
 const IssueList: React.FC<any> = ({ issues, repo }) => {
@@ -12,14 +9,16 @@ const IssueList: React.FC<any> = ({ issues, repo }) => {
   }
 
   return (
-    <Segment>
-      <h3>
-        {issues.repos[repo].length} Issues
-      </h3>
-      <List divided inverted relaxed verticalAlign='middle'>
-        <IssueDetails issues={issues.repos[repo]} />
-      </List>
-    </Segment>
+    <div>
+      <SectionTitle as='h2'>Issues ({issues.repos[repo] ? issues.repos[repo].length : 0})</SectionTitle>
+      <div>
+        {
+          issues.repos[repo].map((issue: any) => (
+            <IssueDetails issue={issue} />
+          ))
+        }
+      </div>
+    </div>
   );
 };
 

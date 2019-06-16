@@ -1,32 +1,43 @@
 import React from 'react';
-import {
-  Icon,
-  Label,
-  List,
-} from 'semantic-ui-react';
-import { formatTime } from '../../../core/helpers';
+import styled from 'styled-components';
 
-const IssueDetails: React.FC<any> = ({ issues }) => {
+import { formatTime } from 'core/helpers';
+import IssueCommentsBadge from './IssueCommentsBadge';
+
+const StyledIssueItem = styled.div`
+  align-content: center;
+  background-color: #201919;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0.5rem 0;
+  padding: 1rem 1.5rem;
+`;
+
+const StyledIssueName = styled.a`
+  color: #DADADA;
+  display: block;
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+
+  :hover {
+    color: #5833CA;
+  }
+`;
+
+const IssueDetails: React.FC<any> = ({ issue }) => {
   return (
-    <React.Fragment>
-      {
-        issues.map((issue: any) => (
-          <List.Item key={issue.url}>
-            <List.Content floated='right'>
-              <Label>
-                <Icon name='comment alternate outline' /> {issue.comments}
-              </Label>
-            </List.Content>
-            <List.Content>
-              <List.Header href={issue.url} as='a'>{issue.title}</List.Header>
-              <List.Description>
-                Created at: {formatTime(issue.created_at)} / Updated at: {formatTime(issue.updated_at)}
-              </List.Description>
-            </List.Content>
-          </List.Item>
-        ))
-      }
-    </React.Fragment>
+    <StyledIssueItem key={issue.url}>
+      <div>
+        <StyledIssueName href={issue.url}>{issue.title}</StyledIssueName>
+        <div>
+          <em>Created at:</em> <strong>{formatTime(issue.created_at)}</strong>
+          <em>Updated at:</em> <strong>{formatTime(issue.updated_at)}</strong>
+        </div>
+      </div>
+      <IssueCommentsBadge numOfComments={issue.comments} />
+    </StyledIssueItem>
   );
 };
 
