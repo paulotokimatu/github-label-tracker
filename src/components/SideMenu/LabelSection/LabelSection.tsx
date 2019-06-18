@@ -2,11 +2,11 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { issueActions, labelActions } from 'redux/actions';
+import FlexContainer from 'shared/FlexContainer';
 import SectionTitle from 'shared/SectionTitle';
 import SideMenuSection from '../SideMenuSection';
 import LabelList from './LabelList/LabelList';
 import LabelSectionHeader from './LabelSectionHeader/LabelSectionHeader';
-import FlexContainer from 'shared/FlexContainer';
 
 const mapStateToProps = (state: any) => {
   return {
@@ -32,7 +32,7 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
   return (
     <SideMenuSection>
       <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
-      <FlexContainer alignItems='center'>
+      <FlexContainer alignItems='center' margin='1.5rem 0'>
         <SectionTitle>Labels ({labels[selectedRepo] ? labels[selectedRepo].length : 0})</SectionTitle>
         <div className='divider-middle'></div>
       </FlexContainer>

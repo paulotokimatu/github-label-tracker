@@ -11,7 +11,7 @@ const StyledRepoItem = styled.div<any>`
   cursor: pointer;
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem 0;
+  margin: 1rem 0;
   padding: 0.5rem 1rem;
   transition: 0.2s background-color;
 

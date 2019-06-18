@@ -3,8 +3,8 @@ import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import { issueActions, labelActions } from 'redux/actions';
+import InstructionScreen from './InstructionScreen/InstructionScreen';
 import IssueList from './IssueList/IssueList';
-import NoContent from './NoContent/NoContent';
 
 const StyledMain = styled.div`
   flex-grow: 2;
@@ -22,7 +22,7 @@ const mapStateToProps = (state: any) => {
 
 const MainContent: React.FC<any> = ({ issues, selectedRepo }) => (
   <StyledMain>
-    {selectedRepo ? <IssueList repo={selectedRepo} issues={issues} /> : <NoContent />}
+    {selectedRepo ? <IssueList repo={selectedRepo} issues={issues} /> : <InstructionScreen />}
   </StyledMain>
 );
 

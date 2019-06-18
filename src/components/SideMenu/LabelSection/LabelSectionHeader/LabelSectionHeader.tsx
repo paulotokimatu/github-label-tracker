@@ -8,7 +8,6 @@ const StyledLabelSectionHeader = styled.div`
   align-items: center;
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
   margin-top: 1rem;
 `;
 

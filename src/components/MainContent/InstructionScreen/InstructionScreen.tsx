@@ -21,7 +21,7 @@ const instructions = [
   },
 ];
 
-const StyledNoContent = styled.div`
+const StyledInstructionScreen = styled.div`
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -29,14 +29,14 @@ const StyledNoContent = styled.div`
   justify-content: space-around;
 `;
 
-const NoContent: React.FC<any> = () => {
+const InstructionScreen: React.FC<any> = () => {
   return (
-    <StyledNoContent>
+    <StyledInstructionScreen>
       {instructions.map((instruction: any, i: number) => (
         <StepInstruction key={i} i={i + 1} instruction={instruction} />
       ))}
-    </StyledNoContent>
+    </StyledInstructionScreen>
   );
 };
 
-export default NoContent;
+export default InstructionScreen;

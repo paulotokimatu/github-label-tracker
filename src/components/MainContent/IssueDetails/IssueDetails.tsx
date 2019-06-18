@@ -10,7 +10,7 @@ const StyledIssueItem = styled.div`
   border-radius: 5px;
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem 0;
+  margin: 0.75rem 0;
   padding: 1rem 1.5rem;
 `;
 

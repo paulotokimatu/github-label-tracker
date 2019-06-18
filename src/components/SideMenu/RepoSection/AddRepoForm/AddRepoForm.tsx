@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
-import StyledInput from '../../../../shared/StyledInput';
+import StyledInput from 'shared/StyledInput';
 
 const StyledForm = styled.form`
   display: flex;
   justify-content: center;
+  margin-top: 1rem;
   width: 100%;
 `;
 

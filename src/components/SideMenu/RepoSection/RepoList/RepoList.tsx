@@ -13,7 +13,7 @@ const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) =>
 
   return (
     <React.Fragment>
-      <FlexContainer alignItems='center'>
+      <FlexContainer alignItems='center' margin='1.5rem 0 1rem'>
         <SectionTitle>Repositories</SectionTitle>
         <div className='divider-middle'></div>
       </FlexContainer>

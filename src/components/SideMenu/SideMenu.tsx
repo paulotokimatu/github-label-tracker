@@ -9,6 +9,7 @@ const StyledSideMenu = styled.div`
   background-color: #201919;
   box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.25);
   display: flex;
+  flex-shrink: 0;
   height: 100%;
   width: 650px;
 `;
