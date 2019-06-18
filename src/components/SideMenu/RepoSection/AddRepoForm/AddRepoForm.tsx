@@ -15,15 +15,16 @@ const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
 
   const onAddRepo = (event: any) => {
     event.preventDefault();
-    addRepo(repoName);
-    fetchLabels(repoName);
-    selectRepo(repoName);
+    const repoNameWithoutSpaces = repoName.replace(/\s+/g, '');
+    addRepo(repoNameWithoutSpaces);
+    fetchLabels(repoNameWithoutSpaces);
+    selectRepo(repoNameWithoutSpaces);
     setRepoName('');
   };
 
   return (
     <StyledForm onSubmit={onAddRepo}>
-      <StyledInput value={repoName} placeholder='Repository name (org/repo)'
+      <StyledInput value={repoName} placeholder='Repository name <org/repo>'
         onChange={(e) => setRepoName(e.target.value)}
       />
     </StyledForm>
