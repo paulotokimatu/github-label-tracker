@@ -6,6 +6,7 @@ import FlexContainer from 'shared/FlexContainer';
 import SectionTitle from 'shared/SectionTitle';
 import SideMenuSection from '../SideMenuSection';
 import LabelList from './LabelList/LabelList';
+import LabelSectionEmpty from './LabelSectionEmpty/LabelSectionEmpty';
 import LabelSectionHeader from './LabelSectionHeader/LabelSectionHeader';
 
 const mapStateToProps = (state: any) => {
@@ -24,7 +25,7 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
     return (
       <SideMenuSection>
         <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
-        No labels
+        <LabelSectionEmpty />
       </SideMenuSection>
     );
   }
