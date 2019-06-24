@@ -5,6 +5,7 @@ const FlexContainer = styled.div<any>`
   display: flex;
   margin: ${(props) => props.margin || '0'};
   justify-content: ${(props) => props.justifyContent || 'initial'};
+  flex-direction: ${(props) => props.flexDirection || 'row'};
 `;
 
 export default FlexContainer;

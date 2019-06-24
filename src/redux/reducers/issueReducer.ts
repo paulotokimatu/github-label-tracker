@@ -1,5 +1,9 @@
+import { combineReducers } from 'redux';
+
 import {
   GET_ISSUES,
+  ISSUE_REQUEST_END,
+  ISSUE_REQUEST_START,
 } from '../actions/issueActions';
 
 const initialState = {
@@ -7,13 +11,25 @@ const initialState = {
   isFetching: false,
 };
 
-const issueReducer = (state = initialState, action: any) => {
+const issueIsFetchingReducer = (state = initialState.isFetching, action: any) => {
+  switch (action.type) {
+    case ISSUE_REQUEST_START:
+      return true;
+    case ISSUE_REQUEST_END:
+      return false;
+    default: {
+      return state;
+    }
+  }
+};
+
+const issueDataReducer = (state = initialState.data, action: any) => {
   switch (action.type) {
     case GET_ISSUES: {
-      const newState: any = { ...state };
-      newState.data[action.payload.repoName] = action.payload.issues;
-
-      return newState;
+      return {
+        ...state,
+        [action.payload.repoName]: action.payload.issues,
+      }
     }
     default: {
       return state;
@@ -21,4 +37,7 @@ const issueReducer = (state = initialState, action: any) => {
   }
 };
 
-export default issueReducer;
+export default combineReducers({
+  data: issueDataReducer,
+  isFetching: issueIsFetchingReducer,
+});

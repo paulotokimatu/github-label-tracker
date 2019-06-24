@@ -1,4 +1,8 @@
+import { combineReducers } from 'redux';
+
 import {
+  LABEL_REQUEST_END,
+  LABEL_REQUEST_START,
   SET_LABELS,
 } from '../actions/labelActions';
 
@@ -7,16 +11,25 @@ const initialState = {
   isFetching: false,
 };
 
-const labelReducer = (state = initialState, action: any) => {
+const labelIsFetchingReducer = (state = initialState.isFetching, action: any) => {
+  switch (action.type) {
+    case LABEL_REQUEST_START:
+      return true;
+    case LABEL_REQUEST_END:
+      return false;
+    default: {
+      return state;
+    }
+  }
+};
+
+const labelDataReducer = (state = initialState.data, action: any) => {
   switch (action.type) {
     case SET_LABELS: {
-      const newState: any = { ...state };
-      newState.data = {
-        ...newState.data,
+      return {
+        ...state,
         [action.payload.repoName]: action.payload.labels,
       };
-
-      return newState;
     }
     default: {
       return state;
@@ -24,4 +37,7 @@ const labelReducer = (state = initialState, action: any) => {
   }
 };
 
-export default labelReducer;
+export default combineReducers({
+  data: labelDataReducer,
+  isFetching: labelIsFetchingReducer,
+});

@@ -1,15 +1,15 @@
 import axios from 'axios';
 
-export const REQUEST_START = 'REQUEST_START';
-export const REQUEST_END = 'REQUEST_END';
+export const ISSUE_REQUEST_START = 'ISSUE_REQUEST_START';
+export const ISSUE_REQUEST_END = 'ISSUE_REQUEST_END';
 export const GET_ISSUES = 'GET_ISSUES';
 
 export const requestStart = () => (
-  { type: REQUEST_START }
+  { type: ISSUE_REQUEST_START }
 );
 
 export const requestEnd = () => (
-  { type: REQUEST_END }
+  { type: ISSUE_REQUEST_END }
 );
 
 export const getIssuesOfRepo = (repoName: string, issues: any) => (
@@ -37,6 +37,9 @@ export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => 
         });
         dispatch(getIssuesOfRepo(repo, parsedResponseData));
       },
-      (error: string) => console.log('An error occurred.', error),
+      (error: string) => {
+        dispatch(requestEnd());
+        console.log('An error occurred.', error);
+      },
     );
 };
