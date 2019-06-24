@@ -2,11 +2,19 @@ import {
   SET_LABELS,
 } from '../actions/labelActions';
 
-const labelReducer = (state = {}, action: any) => {
+const initialState = {
+  data: {},
+  isFetching: false,
+};
+
+const labelReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case SET_LABELS: {
       const newState: any = { ...state };
-      newState[action.payload.repoName] = action.payload.labels;
+      newState.data = {
+        ...newState.data,
+        [action.payload.repoName]: action.payload.labels,
+      };
 
       return newState;
     }

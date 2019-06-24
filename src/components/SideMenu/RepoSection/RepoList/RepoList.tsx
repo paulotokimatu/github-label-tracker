@@ -22,7 +22,7 @@ const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) =>
           <RepoItem key={repoName} repoName={repoName}
             selectRepo={selectRepo}
             selectedRepo={selectedRepo}
-            numberOfIssues={issues.repos[repoName] ? issues.repos[repoName].length : 0}
+            numberOfIssues={issues.data[repoName] ? issues.data[repoName].length : 0}
           />
         ))
       }

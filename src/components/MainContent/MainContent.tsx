@@ -15,7 +15,6 @@ const StyledMain = styled.div`
 const mapStateToProps = (state: any) => {
   return {
     issues: state.issues,
-    labels: state.labels,
     selectedRepo: state.ui.selectedRepo,
   };
 };

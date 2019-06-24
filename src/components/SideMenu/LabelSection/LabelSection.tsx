@@ -17,11 +17,7 @@ const mapStateToProps = (state: any) => {
 };
 
 const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selectedRepo }) => {
-  if (!selectedRepo) {
-    return null;
-  }
-
-  if (!labels[selectedRepo] || labels[selectedRepo].length === 0) {
+  if (!labels.data[selectedRepo] || labels.data[selectedRepo].length === 0) {
     return (
       <SideMenuSection>
         <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
@@ -34,9 +30,10 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
     <SideMenuSection>
       <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
       <FlexContainer alignItems='center' margin='1.5rem 0'>
-        <SectionTitle>Labels ({labels[selectedRepo] ? labels[selectedRepo].length : 0})</SectionTitle>
+        <SectionTitle>Labels ({labels.data[selectedRepo] ? labels.data[selectedRepo].length : 0})</SectionTitle>
         <div className='divider-middle'></div>
       </FlexContainer>
+      {/* TODO maybe pass only the data */}
       <LabelList fetchIssues={fetchIssues} selectedRepo={selectedRepo} labels={labels} />
     </SideMenuSection>
   );

@@ -3,15 +3,15 @@ import {
 } from '../actions/issueActions';
 
 const initialState = {
+  data: {},
   isFetching: false,
-  repos: {},
 };
 
 const issueReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GET_ISSUES: {
       const newState: any = { ...state };
-      newState.repos[action.payload.repoName] = action.payload.issues;
+      newState.data[action.payload.repoName] = action.payload.issues;
 
       return newState;
     }

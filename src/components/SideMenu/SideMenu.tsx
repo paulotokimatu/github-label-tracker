@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import styled from 'styled-components';
 
 import Divider from 'shared/Divider';
@@ -14,14 +15,27 @@ const StyledSideMenu = styled.div`
   width: 650px;
 `;
 
-const SideMenu: React.FC<any> = () => {
+const mapStateToProps = (state: any) => {
+  return {
+    selectedRepo: state.ui.selectedRepo,
+  };
+};
+
+const SideMenu: React.FC<any> = ({ selectedRepo }) => {
   return (
     <StyledSideMenu>
       <RepoSection />
-      <Divider />
-      <LabelSection />
+      {(selectedRepo)
+        ? (
+          <React.Fragment>
+            <Divider />
+            <LabelSection />
+          </React.Fragment>
+          )
+        : null
+      }
     </StyledSideMenu>
   );
 };
 
-export default SideMenu;
+export default connect(mapStateToProps)(SideMenu);
