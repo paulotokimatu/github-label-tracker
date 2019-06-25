@@ -26,14 +26,22 @@ const StyledIssueName = styled.a`
   }
 `;
 
+const StyledMarginRight = styled.span`
+  margin-right: 1rem;
+`;
+
 const IssueDetails: React.FC<any> = ({ issue }) => {
   return (
     <StyledIssueItem key={issue.url}>
       <div>
         <StyledIssueName href={issue.url}>{issue.title}</StyledIssueName>
         <div>
-          <em>Created at:</em> <strong>{formatTime(issue.created_at)}</strong>
-          <em>Updated at:</em> <strong>{formatTime(issue.updated_at)}</strong>
+          <StyledMarginRight>
+            <em>Updated at</em> <strong>{formatTime(issue.updated_at)}</strong>
+          </StyledMarginRight>
+          <span>
+            <em>Created at</em> <strong>{formatTime(issue.created_at)}</strong>
+          </span>
         </div>
       </div>
       <IssueCommentsBadge numOfComments={issue.comments} />
