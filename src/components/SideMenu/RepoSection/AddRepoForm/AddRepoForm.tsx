@@ -10,14 +10,13 @@ const StyledForm = styled.form`
   width: 100%;
 `;
 
-const AddRepoForm: React.FC<any> = ({ addRepo, fetchLabels, selectRepo }) => {
+const AddRepoForm: React.FC<any> = ({ addRepo, selectRepo }) => {
   const [repoName, setRepoName] = useState<string>('axios/axios');
 
   const onAddRepo = (event: any) => {
     event.preventDefault();
     const repoNameWithoutSpaces = repoName.replace(/\s+/g, '');
     addRepo(repoNameWithoutSpaces);
-    fetchLabels(repoNameWithoutSpaces);
     selectRepo(repoNameWithoutSpaces);
     setRepoName('');
   };

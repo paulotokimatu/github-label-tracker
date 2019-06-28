@@ -15,13 +15,6 @@ export const requestEnd = () => (
   { type: LABEL_REQUEST_END }
 );
 
-export const selectLabel = (repoName: string, label: string) => (
-  {
-    payload: { repoName, label },
-    type: SELECT_LABEL,
-  }
-);
-
 export const setLabels = (repoName: string, labels: any) => (
   {
     payload: { repoName, labels },

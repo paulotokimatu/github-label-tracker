@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { issueActions, labelActions, repoActions, uiActions } from 'redux/actions';
+import { issueActions, repoActions, uiActions } from 'redux/actions';
 
 import SideMenuSection from '../SideMenuSection';
 import AddRepoForm from './AddRepoForm/AddRepoForm';
@@ -16,11 +16,11 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-const RepoSection: React.FC<any> = ({ issues, repos, addRepo, fetchLabels, selectRepo, selectedRepo }) => {
+const RepoSection: React.FC<any> = ({ issues, repos, addRepo, selectRepo, selectedRepo }) => {
   return (
     <SideMenuSection>
       <UserMenu />
-      <AddRepoForm addRepo = { addRepo } fetchLabels = { fetchLabels } selectRepo = { selectRepo } />
+      <AddRepoForm addRepo = { addRepo } selectRepo = { selectRepo } />
       <RepoList issues={issues} repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
     </SideMenuSection>
   );
@@ -29,6 +29,5 @@ const RepoSection: React.FC<any> = ({ issues, repos, addRepo, fetchLabels, selec
 export default connect(mapStateToProps, {
   addRepo: repoActions.addRepo,
   fetchIssues: issueActions.fetchIssues,
-  fetchLabels: labelActions.fetchLabels,
   selectRepo: uiActions.selectRepo,
 })(RepoSection);

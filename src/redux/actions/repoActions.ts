@@ -1,13 +1,8 @@
+import { saveState } from 'redux/store/localStorage';
+
 export const ADD_REPO = 'ADD_REPO';
 export const DELETE_REPO = 'DELETE_REPO';
 export const EDIT_REPO = 'EDIT_REPO';
-
-export const addRepo = (repoName: string) => (
-  {
-    payload: repoName,
-    type: ADD_REPO,
-  }
-);
 
 export const deleteRepo = (repoName: string) => (
   {
@@ -22,3 +17,12 @@ export const editRepo = (oldRepoName: string, newRepoName: string) => (
     type: EDIT_REPO,
   }
 );
+
+export const addRepo = (repoName: string) => (dispatch: any, getState: any) => {
+  dispatch({
+    payload: repoName,
+    type: ADD_REPO,
+  });
+
+  saveState(getState());
+};

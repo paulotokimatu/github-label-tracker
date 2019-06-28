@@ -2,7 +2,6 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
-import { issueActions, labelActions } from 'redux/actions';
 import InstructionScreen from './InstructionScreen/InstructionScreen';
 import IssueList from './IssueList/IssueList';
 
@@ -28,7 +27,4 @@ const MainContent: React.FC<any> = ({ issues, selectedRepo }) => (
   </StyledMain>
 );
 
-export default connect(mapStateToProps, {
-  fetchIssues: issueActions.fetchIssues,
-  fetchLabels: labelActions.fetchLabels,
-})(MainContent);
+export default connect(mapStateToProps)(MainContent);

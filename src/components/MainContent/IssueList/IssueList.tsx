@@ -28,7 +28,7 @@ const IssueList: React.FC<any> = ({ issues, repo }) => {
         <div className='divider-middle'></div>
       </FlexContainer>
       <div>
-        {issues.data[repo].map((issue: any) => <IssueDetails issue={issue} />)}
+        {issues.data[repo].map((issue: any) => <IssueDetails key={issue.url} issue={issue} />)}
       </div>
     </div>
   );

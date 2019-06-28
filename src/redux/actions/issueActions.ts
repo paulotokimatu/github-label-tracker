@@ -8,6 +8,10 @@ export const requestStart = () => (
   { type: ISSUE_REQUEST_START }
 );
 
+export const TESTa = () => (
+  { type: ISSUE_REQUEST_START }
+);
+
 export const requestEnd = () => (
   { type: ISSUE_REQUEST_END }
 );

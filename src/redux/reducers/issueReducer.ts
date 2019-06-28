@@ -29,7 +29,7 @@ const issueDataReducer = (state = initialState.data, action: any) => {
       return {
         ...state,
         [action.payload.repoName]: action.payload.issues,
-      }
+      };
     }
     default: {
       return state;
