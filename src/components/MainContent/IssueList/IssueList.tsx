@@ -5,7 +5,7 @@ import LoadingSpinner from 'shared/LoadingSpinner';
 import SectionTitle from 'shared/SectionTitle';
 import IssueDetails from '../IssueDetails/IssueDetails';
 
-const IssueList: React.FC<any> = ({ issues, repo }) => {
+const IssueList: React.FC<any> = ({ issues, selectedRepo }) => {
   if (issues.isFetching) {
     return (
       <div>
@@ -24,11 +24,11 @@ const IssueList: React.FC<any> = ({ issues, repo }) => {
   return (
     <div>
       <FlexContainer alignItems='center' margin='0.5rem 0 1.5rem'>
-        <SectionTitle as='h2'>Issues ({issues.data[repo] ? issues.data[repo].length : 0})</SectionTitle>
+        <SectionTitle as='h2'>Issues ({issues.data[selectedRepo] ? issues.data[selectedRepo].length : 0})</SectionTitle>
         <div className='divider-middle'></div>
       </FlexContainer>
       <div>
-        {issues.data[repo].map((issue: any) => <IssueDetails key={issue.url} issue={issue} />)}
+        {issues.data[selectedRepo].map((issue: any) => <IssueDetails key={issue.url} issue={issue} />)}
       </div>
     </div>
   );

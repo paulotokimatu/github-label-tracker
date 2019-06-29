@@ -1,10 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledLabelBadge = styled.div`
+const StyledLabelBadge = styled.div<any>`
   background-color: #2e2727;
   border-radius: 3px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: ${(props) => props.active ? '#' + (props.color || '#c7def8') : '#2e2727'};
+  border-top-color: ${(props) => props.color ? '#' + props.color : '#c7def8'};
   cursor: pointer;
+  font-weight: ${(props) => props.active ? '600' : 'normal'};
   margin: 1rem 0;
   padding: 0.5rem 1rem;
   transition: 0.3s background-color;
@@ -12,7 +17,7 @@ const StyledLabelBadge = styled.div`
 
 const LabelBadge: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
   return (
-    <StyledLabelBadge style={{ borderTop: '3px solid #' + label.color }}
+    <StyledLabelBadge color={label.color}
       onClick={() => fetchIssuesWithLabel(repo, label.name)}
     >
       {label.name}

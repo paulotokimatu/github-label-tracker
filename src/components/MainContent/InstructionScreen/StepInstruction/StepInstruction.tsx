@@ -39,7 +39,7 @@ const StyledStepDetails = styled.div`
   font-size: 1rem;
 `;
 
-const StepInstruction: React.FC<any> = ({ i, instruction }) => {
+const StepInstruction: React.FC<{ i: number, instruction: any }> = ({ i, instruction }) => {
   return (
     <StyledStep>
       <StyledStepNumber>{i}</StyledStepNumber>

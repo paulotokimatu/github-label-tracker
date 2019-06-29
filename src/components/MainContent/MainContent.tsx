@@ -21,8 +21,8 @@ const mapStateToProps = (state: any) => {
 const MainContent: React.FC<any> = ({ issues, selectedRepo }) => (
   <StyledMain>
     {(issues.isFetching || issues.data[selectedRepo])
-        ? <IssueList repo={selectedRepo} issues={issues} />
-        : <InstructionScreen />
+      ? <IssueList selectedRepo={selectedRepo} issues={issues} />
+      : <InstructionScreen />
     }
   </StyledMain>
 );

@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 import { formatTime } from 'core/helpers';
 import IssueCommentsBadge from './IssueCommentsBadge';
+import Issue from 'core/models/Issue';
 
 const StyledIssueItem = styled.div`
   align-content: center;
@@ -30,7 +31,7 @@ const StyledMarginRight = styled.span`
   margin-right: 1rem;
 `;
 
-const IssueDetails: React.FC<any> = ({ issue }) => {
+const IssueDetails: React.FC<{ issue: Issue }> = ({ issue }) => {
   return (
     <StyledIssueItem key={issue.url}>
       <div>

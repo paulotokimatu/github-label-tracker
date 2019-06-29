@@ -9,7 +9,8 @@
     "quotemark": [
       true,
       "single"
-    ]
+    ],
+    "interface-name": false
   },
   "rulesDirectory": []
 }

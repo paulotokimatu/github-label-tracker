@@ -18,7 +18,7 @@ const StyleIcon = styled(Icon)`
   }
 `;
 
-const IssueCommentsBadge: React.FC<any> = ({ numOfComments }) => {
+const IssueCommentsBadge: React.FC<{ numOfComments: number }> = ({ numOfComments }) => {
   return (
     <FlexContainer alignItems='center'>
       <StyledIssueCommentsBadge>
