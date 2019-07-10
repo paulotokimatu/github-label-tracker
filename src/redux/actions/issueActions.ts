@@ -5,17 +5,21 @@ import Issue from 'core/models/Issue';
 export const ISSUE_REQUEST_START = 'ISSUE_REQUEST_START';
 export const ISSUE_REQUEST_END = 'ISSUE_REQUEST_END';
 export const GET_ISSUES = 'GET_ISSUES';
+export const DELETE_ISSUES = 'DELETE_ISSUES';
 
 export const requestStart = () => (
   { type: ISSUE_REQUEST_START }
 );
 
-export const TESTa = () => (
-  { type: ISSUE_REQUEST_START }
-);
-
 export const requestEnd = () => (
   { type: ISSUE_REQUEST_END }
+);
+
+export const deleteIssues = (repoName: string) => (
+  {
+    payload: { repoName },
+    type: DELETE_ISSUES,
+  }
 );
 
 export const getIssuesOfRepo = (repoName: string, issues: Issue[]) => (

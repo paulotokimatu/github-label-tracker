@@ -2,15 +2,14 @@ import { applyMiddleware, createStore  } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
 import rootReducer from '../reducers';
-import { loadState } from './localStorage';
+import { loadReposState } from './localStorage';
 
-const persistedState = loadState();
+const persistedReposData = loadReposState();
 
 const store =  createStore(
   rootReducer,
   {
-    repos: new Set(persistedState.repos),
-    ui: persistedState.ui,
+    repos: new Set(persistedReposData),
   },
   applyMiddleware(
     thunkMiddleware,

@@ -16,18 +16,25 @@ const mapStateToProps = (state: any) => {
   };
 };
 
-const RepoSection: React.FC<any> = ({ issues, repos, addRepo, selectRepo, selectedRepo }) => {
+const RepoSection: React.FC<any> = ({ issues, repos, addRepo, deleteRepo, selectRepo, selectedRepo }) => {
   return (
     <SideMenuSection>
       <UserMenu />
       <AddRepoForm addRepo = { addRepo } selectRepo = { selectRepo } />
-      <RepoList issues={issues} repos={repos} selectRepo={selectRepo} selectedRepo={selectedRepo} />
+      <RepoList
+        issues={issues}
+        repos={repos}
+        selectRepo={selectRepo}
+        selectedRepo={selectedRepo}
+        deleteRepo={deleteRepo}
+      />
     </SideMenuSection>
   );
 };
 
 export default connect(mapStateToProps, {
   addRepo: repoActions.addRepo,
+  deleteRepo: repoActions.deleteRepo,
   fetchIssues: issueActions.fetchIssues,
   selectRepo: uiActions.selectRepo,
 })(RepoSection);

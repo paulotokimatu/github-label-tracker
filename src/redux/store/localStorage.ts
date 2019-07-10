@@ -1,20 +1,31 @@
-export const loadState = () => {
+export const loadReposState = () => {
   try {
-    const serializedState = localStorage.getItem('app');
-    return JSON.parse(serializedState || '{}');
+    const serializedReposData = localStorage.getItem('repos');
+    return JSON.parse(serializedReposData || '[]');
   } catch (err) {
     return undefined;
   }
 };
 
-export const saveState = (state: any) => {
+export const saveReposState = (repos: any) => {
   try {
-    const serializedState = JSON.stringify({
-      repos: Array.from(state.repos),
-      ui: state.ui,
+    const stringifiedState = JSON.stringify(Array.from(repos));
+
+    localStorage.setItem('repos', stringifiedState);
+  } catch {
+    return;
+  }
+};
+
+export const deleteRepoFromStorage = (repoToBeDeleted: string) => {
+  try {
+    const reposData = loadReposState();
+
+    const reposUpdated = reposData.filter((repo: string) => {
+      return repo !== repoToBeDeleted;
     });
 
-    localStorage.setItem('app', serializedState);
+    saveReposState(reposUpdated);
   } catch {
     return;
   }

@@ -1,12 +1,16 @@
 import { combineReducers } from 'redux';
 
 import {
+  DELETE_LABELS,
   LABEL_REQUEST_END,
   LABEL_REQUEST_START,
   SET_LABELS,
 } from '../actions/labelActions';
 
-const initialState = {
+const initialState: {
+  data: { [name: string]: any },
+  isFetching: boolean,
+} = {
   data: {},
   isFetching: false,
 };
@@ -30,6 +34,12 @@ const labelDataReducer = (state = initialState.data, action: any) => {
         ...state,
         [action.payload.repoName]: action.payload.labels,
       };
+    }
+    case DELETE_LABELS: {
+      const newState = { ...state };
+      delete newState[action.payload.repoName];
+
+      return newState;
     }
     default: {
       return state;

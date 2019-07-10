@@ -4,7 +4,7 @@ import FlexContainer from 'shared/FlexContainer';
 import SectionTitle from 'shared/SectionTitle';
 import RepoItem from '../RepoItem/RepoItem';
 
-const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) => {
+const RepoList: React.FC<any> = ({ issues, repos, deleteRepo, selectRepo, selectedRepo }) => {
   const reposArray: string[] = [];
 
   repos.forEach((repoName: string) => {
@@ -20,6 +20,7 @@ const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) =>
       {
         reposArray.map((repoName: string) => (
           <RepoItem key={repoName} repoName={repoName}
+            deleteRepo={deleteRepo}
             selectRepo={selectRepo}
             selectedRepo={selectedRepo}
             numberOfIssues={issues.data[repoName] ? issues.data[repoName].length : 0}
@@ -28,6 +29,6 @@ const RepoList: React.FC<any> = ({ issues, repos, selectRepo, selectedRepo }) =>
       }
     </React.Fragment>
   );
-}
+};
 
 export default RepoList;

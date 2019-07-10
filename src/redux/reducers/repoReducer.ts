@@ -1,7 +1,6 @@
 import {
   ADD_REPO,
   DELETE_REPO,
-  EDIT_REPO,
 } from '../actions/repoActions';
 
 const repoReducer = (state = new Set(), action: any) => {
@@ -20,9 +19,6 @@ const repoReducer = (state = new Set(), action: any) => {
       }
 
       return newSet;
-    }
-    case EDIT_REPO: {
-      return state;
     }
     default: {
       return state;

@@ -4,10 +4,8 @@ import Label from 'core/models/Label';
 
 export const LABEL_REQUEST_START = 'LABEL_REQUEST_START';
 export const LABEL_REQUEST_END = 'LABEL_REQUEST_END';
-export const SELECT_LABEL = 'SELECT_LABEL';
-export const UNSELECT_LABEL = 'UNSELECT_LABEL';
-export const FETCH_LABELS = 'FETCH_LABELS';
 export const SET_LABELS = 'SET_LABELS';
+export const DELETE_LABELS = 'DELETE_LABELS';
 
 export const requestStart = () => (
   { type: LABEL_REQUEST_START }
@@ -21,6 +19,13 @@ export const setLabels = (repoName: string, labels: Label[]) => (
   {
     payload: { repoName, labels },
     type: SET_LABELS,
+  }
+);
+
+export const deleteLabels = (repoName: string) => (
+  {
+    payload: { repoName },
+    type: DELETE_LABELS,
   }
 );
 

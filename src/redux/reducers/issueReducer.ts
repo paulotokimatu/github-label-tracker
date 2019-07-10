@@ -1,12 +1,16 @@
 import { combineReducers } from 'redux';
 
 import {
+  DELETE_ISSUES,
   GET_ISSUES,
   ISSUE_REQUEST_END,
   ISSUE_REQUEST_START,
 } from '../actions/issueActions';
 
-const initialState = {
+const initialState: {
+  data: { [name: string]: any },
+  isFetching: boolean,
+} = {
   data: {},
   isFetching: false,
 };
@@ -30,6 +34,11 @@ const issueDataReducer = (state = initialState.data, action: any) => {
         ...state,
         [action.payload.repoName]: action.payload.issues,
       };
+    }
+    case DELETE_ISSUES: {
+      const newState = { ...state };
+      delete newState[action.payload.repoName];
+      return newState;
     }
     default: {
       return state;
