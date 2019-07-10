@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 import Issue from 'core/models/Issue';
+import { selectLabel } from './uiActions';
 
 export const ISSUE_REQUEST_START = 'ISSUE_REQUEST_START';
 export const ISSUE_REQUEST_END = 'ISSUE_REQUEST_END';
@@ -31,6 +32,7 @@ export const getIssuesOfRepo = (repoName: string, issues: Issue[]) => (
 
 export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => {
   dispatch(requestStart());
+  dispatch(selectLabel(repo, labels));
 
   return axios.get(`https://api.github.com/repos/${repo}/issues?labels=${labels}`)
     .then(

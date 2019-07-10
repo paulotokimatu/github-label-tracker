@@ -14,14 +14,15 @@ const StyledMain = styled.div`
 const mapStateToProps = (state: any) => {
   return {
     issues: state.issues,
+    selectedLabels: state.ui.selectedLabels,
     selectedRepo: state.ui.selectedRepo,
   };
 };
 
-const MainContent: React.FC<any> = ({ issues, selectedRepo }) => (
+const MainContent: React.FC<any> = ({ issues, selectedRepo, selectedLabels }) => (
   <StyledMain>
     {(issues.isFetching || issues.data[selectedRepo])
-      ? <IssueList selectedRepo={selectedRepo} issues={issues} />
+      ? <IssueList selectedRepo={selectedRepo} issues={issues} selectedLabel={selectedLabels[selectedRepo]} />
       : <InstructionScreen />
     }
   </StyledMain>

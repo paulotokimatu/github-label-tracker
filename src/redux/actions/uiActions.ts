@@ -1,13 +1,7 @@
 import { fetchLabels } from './labelActions';
 
+export const SELECT_LABEL = 'SELECT_LABEL';
 export const SELECT_REPO = 'SELECT_REPO';
-
-// export const selectRepo = (repoName: string) => (
-//   {
-//     payload: repoName,
-//     type: SELECT_REPO,
-//   }
-// );
 
 export const selectRepo = (repoName: string) => (dispatch: any) => {
   dispatch(fetchLabels(repoName));
@@ -17,3 +11,13 @@ export const selectRepo = (repoName: string) => (dispatch: any) => {
     type: SELECT_REPO,
   });
 };
+
+export const selectLabel = (repoName: string, labelName: string) => (
+  {
+    payload: {
+      label: labelName,
+      repo: repoName,
+    },
+    type: SELECT_LABEL,
+  }
+);

@@ -50,13 +50,19 @@ const StyledRepoName = styled.h4`
   text-transform: uppercase;
 `;
 
-const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, deleteRepo, selectRepo, selectedRepo }) => {
+const StyledMutedText = styled.span`
+  color: rgba(255, 255, 255, 0.3);
+`;
+
+const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, deleteRepo, selectRepo, selectedRepo, selectedLabel }) => {
   const isActive = selectedRepo === repoName;
   return (
     <StyledRepoItem active={isActive} onClick={() => selectRepo(repoName)}>
       <div>
         <StyledRepoName>{repoName}</StyledRepoName>
-        <em>Help wanted</em>
+        <em>
+          {selectedLabel || <StyledMutedText>No label selected</StyledMutedText>}
+        </em>
       </div>
       <FlexContainer alignItems='center' justifyContent='center'>
         <DeleteButton onClick={(e: any) => { e.stopPropagation(); deleteRepo(repoName); }}>

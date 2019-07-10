@@ -12,11 +12,14 @@ const mapStateToProps = (state: any) => {
   return {
     issues: state.issues,
     repos: state.repos,
+    selectedLabels: state.ui.selectedLabels,
     selectedRepo: state.ui.selectedRepo,
   };
 };
 
-const RepoSection: React.FC<any> = ({ issues, repos, addRepo, deleteRepo, selectRepo, selectedRepo }) => {
+const RepoSection: React.FC<any> = ({
+  issues, repos, addRepo, deleteRepo, selectRepo, selectedRepo, selectedLabels,
+ }) => {
   return (
     <SideMenuSection>
       <UserMenu />
@@ -27,6 +30,7 @@ const RepoSection: React.FC<any> = ({ issues, repos, addRepo, deleteRepo, select
         selectRepo={selectRepo}
         selectedRepo={selectedRepo}
         deleteRepo={deleteRepo}
+        selectedLabels={selectedLabels}
       />
     </SideMenuSection>
   );
