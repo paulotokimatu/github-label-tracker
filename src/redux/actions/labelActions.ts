@@ -1,6 +1,7 @@
-import axios from 'axios';
+import axios, { AxiosError } from 'axios';
 
 import Label from 'core/models/Label';
+import { setAlert } from './alertActions';
 
 export const LABEL_REQUEST_START = 'LABEL_REQUEST_START';
 export const LABEL_REQUEST_END = 'LABEL_REQUEST_END';
@@ -44,8 +45,11 @@ export const fetchLabels = (repoName: string) => (dispatch: any) => {
         });
         dispatch(setLabels(repoName, parsedResponseData));
       },
-      (error: string) => {
+      (error: AxiosError) => {
         dispatch(requestEnd());
+        if (error.response && error.response.status === 404) {
+          dispatch(setAlert('Repository not found.', 'error'));
+        }
         console.log('An error occurred.', error);
       },
     );
