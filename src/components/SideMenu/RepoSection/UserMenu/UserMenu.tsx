@@ -1,6 +1,6 @@
 import React from 'react';
 
-const UserMenu: React.FC<any> = () => {
+const UserMenu: React.FC = () => {
   return null;
 };
 

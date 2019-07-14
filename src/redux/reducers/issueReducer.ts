@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import Issue from 'core/models/Issue';
 import {
   DELETE_ISSUES,
   GET_ISSUES,
@@ -8,7 +9,7 @@ import {
 } from '../actions/issueActions';
 
 const initialState: {
-  data: { [name: string]: any },
+  data: { [name: string]: Issue[] },
   isFetching: boolean,
 } = {
   data: {},

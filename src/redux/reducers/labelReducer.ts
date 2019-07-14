@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 
+import Label from 'core/models/Label';
 import {
   DELETE_LABELS,
   LABEL_REQUEST_END,
@@ -8,7 +9,7 @@ import {
 } from '../actions/labelActions';
 
 const initialState: {
-  data: { [name: string]: any },
+  data: { [name: string]: Label },
   isFetching: boolean,
 } = {
   data: {},

@@ -3,7 +3,13 @@ import styled from 'styled-components';
 
 import StepInstruction from './StepInstruction/StepInstruction';
 
-const instructions = [
+export interface Instruction {
+  example: string;
+  text: string;
+  title: string;
+}
+
+const instructions: Instruction[] = [
   {
     example: 'Example: facebook/react',
     text: 'Add the GitHub repositories you want to track.',
@@ -29,10 +35,10 @@ const StyledInstructionScreen = styled.div`
   justify-content: center;
 `;
 
-const InstructionScreen: React.FC<any> = () => {
+const InstructionScreen: React.FC = () => {
   return (
     <StyledInstructionScreen>
-      {instructions.map((instruction: any, i: number) => (
+      {instructions.map((instruction: Instruction, i: number) => (
         <StepInstruction key={i} i={i + 1} instruction={instruction} />
       ))}
     </StyledInstructionScreen>

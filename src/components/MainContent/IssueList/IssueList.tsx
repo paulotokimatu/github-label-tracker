@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Issue from 'core/models/Issue';
 import FlexContainer from 'shared/FlexContainer';
 import LoadingSpinner from 'shared/LoadingSpinner';
 import SectionTitle from 'shared/SectionTitle';
@@ -28,7 +29,7 @@ const ListHeader: React.FC<any> = ({ issues, selectedRepo, selectedLabel }) => (
   </React.Fragment>
 );
 
-const LoadingContainer: React.FC<any> = () => (
+const LoadingContainer: React.FC = () => (
   <FlexContainer alignItems='center' justifyContent='center' flexDirection='column' margin='2.5rem 0 1.5rem'>
     <LoadingSpinner />
     <h3>Loading...</h3>
@@ -41,7 +42,7 @@ const IssueList: React.FC<any> = ({ issues, selectedRepo, selectedLabel }) => (
     { issues.isFetching
       ? <LoadingContainer />
       : <div>
-          {issues.data[selectedRepo].map((issue: any) => <IssueDetails key={issue.url} issue={issue} />)}
+          {issues.data[selectedRepo].map((issue: Issue) => <IssueDetails key={issue.url} issue={issue} />)}
         </div>
     }
   </div>

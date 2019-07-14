@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Badge = styled.div<any>`
+const Badge = styled.div<{ active?: boolean }>`
   align-content: center;
   background-color: ${(props) => props.active ? '#5833CA' : '#4F4F4F'};
   border-radius: 20px;

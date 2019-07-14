@@ -5,10 +5,14 @@ import labelReducer from './labelReducer';
 import repoReducer from './repoReducer';
 import uiReducer from './uiReducer';
 
-export default combineReducers({
+const rootReducer = combineReducers({
   alert: alertReducer,
   issues: issueReducer,
   labels: labelReducer,
   repos: repoReducer,
   ui: uiReducer,
 });
+
+export type AppState = ReturnType<typeof rootReducer>;
+
+export default rootReducer;

@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { Instruction } from '../InstructionScreen';
+
 const StyledStep = styled.div`
   align-items: center;
   display: flex;
@@ -40,7 +42,7 @@ const StyledStepDetails = styled.div`
   font-size: 1rem;
 `;
 
-const StepInstruction: React.FC<{ i: number, instruction: any }> = ({ i, instruction }) => {
+const StepInstruction: React.FC<{ i: number, instruction: Instruction }> = ({ i, instruction }) => {
   return (
     <StyledStep>
       <StyledStepNumber>{i}</StyledStepNumber>

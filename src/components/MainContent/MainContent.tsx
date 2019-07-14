@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 
+import { AppState } from 'redux/reducers';
 import InstructionScreen from './InstructionScreen/InstructionScreen';
 import IssueList from './IssueList/IssueList';
 
@@ -11,7 +12,7 @@ const StyledMain = styled.div`
   padding: 1.5rem;
 `;
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
   return {
     issues: state.issues,
     selectedLabels: state.ui.selectedLabels,

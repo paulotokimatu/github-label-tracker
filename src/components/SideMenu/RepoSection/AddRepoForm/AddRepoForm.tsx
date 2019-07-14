@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { SyntheticEvent, useState } from 'react';
 import styled from 'styled-components';
 
 import StyledInput from 'shared/StyledInput';
@@ -13,7 +13,7 @@ const StyledForm = styled.form`
 const AddRepoForm: React.FC<any> = ({ addRepo, selectRepo }) => {
   const [repoName, setRepoName] = useState<string>('axios/axios');
 
-  const onAddRepo = (event: any) => {
+  const onAddRepo = (event: SyntheticEvent) => {
     event.preventDefault();
     const repoNameWithoutSpaces = repoName.replace(/\s+/g, '');
     addRepo(repoNameWithoutSpaces);

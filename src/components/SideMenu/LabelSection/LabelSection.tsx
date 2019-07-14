@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { issueActions, labelActions } from 'redux/actions';
+import { AppState } from 'redux/reducers';
 import FlexContainer from 'shared/FlexContainer';
 import LoadingSpinner from 'shared/LoadingSpinner';
 import SectionTitle from 'shared/SectionTitle';
@@ -10,7 +11,7 @@ import LabelList from './LabelList/LabelList';
 import LabelSectionEmpty from './LabelSectionEmpty/LabelSectionEmpty';
 import LabelSectionHeader from './LabelSectionHeader/LabelSectionHeader';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
   return {
     labels: state.labels,
     selectedRepo: state.ui.selectedRepo,

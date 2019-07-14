@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { SyntheticEvent } from 'react';
 import { Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 
@@ -21,7 +21,7 @@ const DeleteButton = styled(CircularButton)`
   }
 `;
 
-const StyledRepoItem = styled.div<any>`
+const StyledRepoItem = styled.div<{ active?: boolean }>`
   align-content: center;
   background-color: ${(props) => props.active ? '#2E2727' : 'none'};
   border-radius: 5px;
@@ -65,7 +65,7 @@ const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, deleteRepo, selectR
         </em>
       </div>
       <FlexContainer alignItems='center' justifyContent='center'>
-        <DeleteButton onClick={(e: any) => { e.stopPropagation(); deleteRepo(repoName); }}>
+        <DeleteButton onClick={(e: SyntheticEvent) => { e.stopPropagation(); deleteRepo(repoName); }}>
           <Icon name='trash alternate outline' />
         </DeleteButton>
         <Badge active={isActive}>{numberOfIssues}</Badge>

@@ -1,7 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const StyledLabelBadge = styled.div<any>`
+interface LabelBadgeTypes {
+  active?: boolean;
+  color?: string;
+}
+
+const StyledLabelBadge = styled.div<LabelBadgeTypes>`
   background-color: #2e2727;
   border-radius: 3px;
   border-width: 3px;

@@ -1,6 +1,14 @@
 import styled from 'styled-components';
 
-const FlexContainer = styled.div<any>`
+interface FlexProperties {
+  alignItems?: 'initial' | 'flex-start' | 'flex-end' | 'center' | 'baseline' | 'stretch';
+  margin?: string;
+  justifyContent?: 'center' | 'start' | 'end' | 'flex-start' | 'flex-end' | 'space-between'
+    | 'space-around' | 'space-evenly' | 'stretch';
+  flexDirection?: 'row' | 'row-reverse' | 'column' | 'column-reverse';
+}
+
+const FlexContainer = styled.div<FlexProperties>`
   align-items: ${(props) => props.alignItems || 'initial'};
   display: flex;
   margin: ${(props) => props.margin || '0'};

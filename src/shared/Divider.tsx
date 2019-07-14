@@ -8,7 +8,7 @@ const StyledVerticalDivider = styled.div`
   width: 3px;
 `;
 
-const Divider: React.FC<any> = () => {
+const Divider: React.FC = () => {
   return (
     <StyledVerticalDivider />
   );

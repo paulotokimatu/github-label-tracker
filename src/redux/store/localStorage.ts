@@ -7,7 +7,7 @@ export const loadReposState = () => {
   }
 };
 
-export const saveReposState = (repos: any) => {
+export const saveReposState = (repos: Set<string>) => {
   try {
     const stringifiedState = JSON.stringify(Array.from(repos));
 

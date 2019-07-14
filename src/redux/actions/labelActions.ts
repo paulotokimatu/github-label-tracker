@@ -1,4 +1,5 @@
 import axios, { AxiosError } from 'axios';
+import { Dispatch } from 'redux';
 
 import Label from 'core/models/Label';
 import { setAlert } from './alertActions';
@@ -30,7 +31,7 @@ export const deleteLabels = (repoName: string) => (
   }
 );
 
-export const fetchLabels = (repoName: string) => (dispatch: any) => {
+export const fetchLabels = (repoName: string) => (dispatch: Dispatch) => {
   dispatch(requestStart());
 
   return axios.get(`https://api.github.com/repos/${repoName}/labels?per_page=100`)

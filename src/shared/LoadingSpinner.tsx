@@ -10,7 +10,7 @@ const rotate = keyframes`
   }
 `;
 
-const LoadingSpinner = styled.div<any>`
+const LoadingSpinner = styled.div`
   width: 80px;
   height: 80px;
   position: relative;

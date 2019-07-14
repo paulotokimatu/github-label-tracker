@@ -6,7 +6,7 @@ import Alert from 'components/TopLevel/Alert';
 import MainContent from './components/MainContent/MainContent';
 import SideMenu from './components/SideMenu/SideMenu';
 
-const App: React.FC<any> = () => {
+const App: React.FC = () => {
   return (
     <div className='app'>
       <Alert />

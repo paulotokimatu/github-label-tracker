@@ -2,13 +2,14 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import { issueActions, repoActions, uiActions } from 'redux/actions';
+import { AppState } from 'redux/reducers';
 
 import SideMenuSection from '../SideMenuSection';
 import AddRepoForm from './AddRepoForm/AddRepoForm';
 import RepoList from './RepoList/RepoList';
 import UserMenu from './UserMenu/UserMenu';
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
   return {
     issues: state.issues,
     repos: state.repos,

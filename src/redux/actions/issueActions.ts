@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { Dispatch } from 'redux';
 
 import Issue from 'core/models/Issue';
 import { selectLabel } from './uiActions';
@@ -30,7 +31,7 @@ export const getIssuesOfRepo = (repoName: string, issues: Issue[]) => (
   }
 );
 
-export const fetchIssues = (repo: string, labels: string) => (dispatch: any) => {
+export const fetchIssues = (repo: string, labels: string) => (dispatch: Dispatch) => {
   dispatch(requestStart());
   dispatch(selectLabel(repo, labels));
 

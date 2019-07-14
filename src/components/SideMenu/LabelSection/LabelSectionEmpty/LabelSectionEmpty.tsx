@@ -33,7 +33,7 @@ const StyledMessage = styled.div`
   margin: 1rem 0;
 `;
 
-const LabelSectionEmpty: React.FC<any> = () => {
+const LabelSectionEmpty: React.FC = () => {
   return (
     <StyledLabelSectionEmpty>
       <StyledIcon><Icon name='exclamation' size='big' /></StyledIcon>

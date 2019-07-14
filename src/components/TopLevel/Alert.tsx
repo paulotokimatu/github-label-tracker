@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import { Icon } from 'semantic-ui-react';
 import styled from 'styled-components';
 
+import AlertType from 'core/models/AlertType';
 import { alertActions } from 'redux/actions';
+import { AppState } from 'redux/reducers';
 
-const StyledAlert = styled.div<any>`
+const StyledAlert = styled.div<{ type: AlertType }>`
   background: ${(props) => props.type === 'error' ? '#cb403c' : (props.type === 'info' ? 'blue' : 'green')};
   border-radius: 4px;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
@@ -62,7 +64,7 @@ const CloseButtonContainer = styled.div`
   }
 `;
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: AppState) => {
   return {
     alert: state.alert,
   };
