@@ -9,7 +9,7 @@ const StyledStep = styled.div`
 
 const StyledStepContent = styled.div`
   background: #201919;
-  border-radius: 6px;
+  border-radius: 2px;
   border-top: 5px solid #5833CA;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
   display: flex;
@@ -17,6 +17,7 @@ const StyledStepContent = styled.div`
   font-size: 1.5rem;
   height: 150px;
   justify-content: center;
+  margin: 1.5rem 0;
   padding: 15px;
   text-align: center;
   width: 225px;

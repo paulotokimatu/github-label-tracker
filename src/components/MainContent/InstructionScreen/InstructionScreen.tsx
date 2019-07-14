@@ -26,7 +26,7 @@ const StyledInstructionScreen = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  justify-content: space-around;
+  justify-content: center;
 `;
 
 const InstructionScreen: React.FC<any> = () => {
