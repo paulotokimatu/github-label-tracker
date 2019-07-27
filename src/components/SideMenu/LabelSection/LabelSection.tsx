@@ -23,7 +23,9 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
     return (
       <SideMenuSection>
         <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
-        <FlexContainer alignItems='center' justifyContent='center' flexDirection='column' margin='2.5rem 0 1.5rem'>
+        <FlexContainer alignItems='center' justifyContent='center' flexDirection='column' margin='2.5rem 0 1.5rem'
+          data-testid='loadingLabels'
+        >
           <LoadingSpinner />
           <h3>Loading...</h3>
         </FlexContainer>
@@ -33,7 +35,7 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
 
   if (!labels.data[selectedRepo] || labels.data[selectedRepo].length === 0) {
     return (
-      <SideMenuSection>
+      <SideMenuSection data-testid='labelListEmpty'>
         <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
         <LabelSectionEmpty />
       </SideMenuSection>
@@ -41,7 +43,7 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
   }
 
   return (
-    <SideMenuSection>
+    <SideMenuSection data-testid='labelList'>
       <LabelSectionHeader fetchLabels={fetchLabels} selectedRepo={selectedRepo} />
       <FlexContainer alignItems='center' margin='1.5rem 0'>
         <SectionTitle>Labels ({labels.data[selectedRepo] ? labels.data[selectedRepo].length : 0})</SectionTitle>

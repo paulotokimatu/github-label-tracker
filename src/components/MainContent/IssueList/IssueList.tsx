@@ -30,7 +30,9 @@ const ListHeader: React.FC<any> = ({ issues, selectedRepo, selectedLabel }) => (
 );
 
 const LoadingContainer: React.FC = () => (
-  <FlexContainer alignItems='center' justifyContent='center' flexDirection='column' margin='2.5rem 0 1.5rem'>
+  <FlexContainer alignItems='center' justifyContent='center' flexDirection='column' margin='2.5rem 0 1.5rem'
+    data-testid='loadingIssues'
+  >
     <LoadingSpinner />
     <h3>Loading...</h3>
   </FlexContainer>
@@ -41,7 +43,7 @@ const IssueList: React.FC<any> = ({ issues, selectedRepo, selectedLabel }) => (
     <ListHeader issues={issues} selectedRepo={selectedRepo} selectedLabel={selectedLabel} />
     { issues.isFetching
       ? <LoadingContainer />
-      : <div>
+      : <div data-testid='issueList'>
           {issues.data[selectedRepo].map((issue: Issue) => <IssueDetails key={issue.url} issue={issue} />)}
         </div>
     }

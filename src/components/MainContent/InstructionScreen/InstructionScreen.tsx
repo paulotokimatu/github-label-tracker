@@ -35,14 +35,16 @@ const StyledInstructionScreen = styled.div`
   justify-content: center;
 `;
 
-const InstructionScreen: React.FC = () => {
+const InstructionScreen: React.FC<{ instructions?: Instruction[] }> = ({ instructions }) => {
   return (
-    <StyledInstructionScreen>
-      {instructions.map((instruction: Instruction, i: number) => (
+    <StyledInstructionScreen data-testid='instructions'>
+      {instructions!.map((instruction: Instruction, i: number) => (
         <StepInstruction key={i} i={i + 1} instruction={instruction} />
       ))}
     </StyledInstructionScreen>
   );
 };
+
+InstructionScreen.defaultProps = { instructions };
 
 export default InstructionScreen;

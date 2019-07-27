@@ -83,11 +83,13 @@ const Alert: React.FC<any> = ({ alert, hideAlert }) => {
       <AlertContent>
         <AlertHeader>
           { alert.type }
-          <CloseButtonContainer onClick={hideAlert}>
+          <CloseButtonContainer data-testid='close' onClick={hideAlert}>
             <Icon name='close' />
           </CloseButtonContainer>
         </AlertHeader>
-        { alert.text }
+        <div data-testid='alertText'>
+          { alert.text }
+        </div>
       </AlertContent>
     </StyledAlert>
   );
@@ -96,3 +98,5 @@ const Alert: React.FC<any> = ({ alert, hideAlert }) => {
 export default connect(mapStateToProps, {
   hideAlert: alertActions.hideAlert,
 })(Alert);
+
+// export default Alert;

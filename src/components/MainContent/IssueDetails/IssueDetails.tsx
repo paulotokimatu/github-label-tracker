@@ -2,8 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 import { formatTime } from 'core/helpers';
-import IssueCommentsBadge from './IssueCommentsBadge';
 import Issue from 'core/models/Issue';
+import IssueCommentsBadge from './IssueCommentsBadge';
 
 const StyledIssueItem = styled.div`
   align-content: center;

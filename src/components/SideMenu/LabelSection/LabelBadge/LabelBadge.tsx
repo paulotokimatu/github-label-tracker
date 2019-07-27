@@ -22,7 +22,7 @@ const StyledLabelBadge = styled.div<LabelBadgeTypes>`
 
 const LabelBadge: React.FC<any> = ({ repo, label, fetchIssuesWithLabel }) => {
   return (
-    <StyledLabelBadge color={label.color}
+    <StyledLabelBadge data-testid='labelItem' color={label.color}
       onClick={() => fetchIssuesWithLabel(repo, label.name)}
     >
       {label.name}

@@ -1,3 +1,5 @@
+/* istanbul ignore file */
+
 import { applyMiddleware, createStore  } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
@@ -6,7 +8,7 @@ import { loadReposState } from './localStorage';
 
 const persistedReposData = loadReposState();
 
-const store =  createStore(
+const store = createStore(
   rootReducer,
   {
     repos: new Set(persistedReposData),

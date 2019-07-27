@@ -20,7 +20,7 @@ const StyleIcon = styled(Icon)`
 
 const IssueCommentsBadge: React.FC<{ numOfComments: number }> = ({ numOfComments }) => {
   return (
-    <FlexContainer alignItems='center'>
+    <FlexContainer alignItems='center' data-testid='comments'>
       <StyledIssueCommentsBadge>
         <StyleIcon name='comment alternate' />
         {numOfComments}

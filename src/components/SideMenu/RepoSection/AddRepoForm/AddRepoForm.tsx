@@ -16,13 +16,14 @@ const AddRepoForm: React.FC<any> = ({ addRepo, selectRepo }) => {
   const onAddRepo = (event: SyntheticEvent) => {
     event.preventDefault();
     const repoNameWithoutSpaces = repoName.replace(/\s+/g, '');
+    console.log(addRepo)
     addRepo(repoNameWithoutSpaces);
     selectRepo(repoNameWithoutSpaces);
     setRepoName('');
   };
 
   return (
-    <StyledForm onSubmit={onAddRepo}>
+    <StyledForm onSubmit={onAddRepo} data-testid='addRepo'>
       <StyledInput value={repoName} placeholder='Repository name <org/repo>'
         onChange={(e) => setRepoName(e.target.value)}
       />

@@ -6,7 +6,7 @@ import Badge from 'shared/Badge';
 import CircularButton from 'shared/CircularButton';
 import FlexContainer from 'shared/FlexContainer';
 
-const DeleteButton = styled(CircularButton)`
+const DeleteButton = styled(CircularButton)<any>`
   display: none;
   background: rgba(182, 35, 35, 1);
   font-size: 0.9rem;
@@ -57,7 +57,7 @@ const StyledMutedText = styled.span`
 const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, deleteRepo, selectRepo, selectedRepo, selectedLabel }) => {
   const isActive = selectedRepo === repoName;
   return (
-    <StyledRepoItem active={isActive} onClick={() => selectRepo(repoName)}>
+    <StyledRepoItem data-testid='repoItem' active={isActive} onClick={() => selectRepo(repoName)}>
       <div>
         <StyledRepoName>{repoName}</StyledRepoName>
         <em>
@@ -65,7 +65,9 @@ const RepoItem: React.FC<any> = ({ numberOfIssues, repoName, deleteRepo, selectR
         </em>
       </div>
       <FlexContainer alignItems='center' justifyContent='center'>
-        <DeleteButton onClick={(e: SyntheticEvent) => { e.stopPropagation(); deleteRepo(repoName); }}>
+        <DeleteButton aria-label='delete repo'
+          onClick={(e: SyntheticEvent) => { e.stopPropagation(); deleteRepo(repoName); }}
+        >
           <Icon name='trash alternate outline' />
         </DeleteButton>
         <Badge active={isActive}>{numberOfIssues}</Badge>

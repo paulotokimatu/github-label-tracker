@@ -24,7 +24,7 @@ const RepoSection: React.FC<any> = ({
   return (
     <SideMenuSection>
       <UserMenu />
-      <AddRepoForm addRepo = { addRepo } selectRepo = { selectRepo } />
+      <AddRepoForm addRepo={addRepo} selectRepo={selectRepo} />
       <RepoList
         issues={issues}
         repos={repos}
