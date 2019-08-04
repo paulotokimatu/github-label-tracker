@@ -16,7 +16,6 @@ const AddRepoForm: React.FC<any> = ({ addRepo, selectRepo }) => {
   const onAddRepo = (event: SyntheticEvent) => {
     event.preventDefault();
     const repoNameWithoutSpaces = repoName.replace(/\s+/g, '');
-    console.log(addRepo)
     addRepo(repoNameWithoutSpaces);
     selectRepo(repoNameWithoutSpaces);
     setRepoName('');

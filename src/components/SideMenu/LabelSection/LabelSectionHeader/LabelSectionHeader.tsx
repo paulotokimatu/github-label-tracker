@@ -22,7 +22,7 @@ const LabelSectionHeader: React.FC<any> = ({ fetchLabels, selectedRepo }) => {
   return (
     <StyledLabelSectionHeader>
       <StyledRepoTitle>{selectedRepo}</StyledRepoTitle>
-      <CircularButton data-testid='refreshLabels' onClick={() => fetchLabels(selectedRepo)}>
+      <CircularButton data-testid='refreshLabels' onClick={() => fetchLabels(selectedRepo, true)}>
         <Icon name='refresh' />
       </CircularButton>
     </StyledLabelSectionHeader>

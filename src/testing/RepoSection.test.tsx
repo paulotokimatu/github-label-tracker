@@ -1,17 +1,22 @@
 import { fireEvent } from '@testing-library/react';
+import axios from 'axios';
 import React from 'react';
 
 import RepoSection from 'components/SideMenu/RepoSection/RepoSection';
 import { connectRender } from './helpers/connectRender';
 import MOCK_DATA from './mock-data/mock-data';
+import MOCK_RESPONSES from './mock-responses/mock-responses';
 
 describe('Repo section', () => {
-  // TODO implement
-  // it('should get cached repo data, if available', () => {
-  //   const { getByTestId } = connectRender(<SideMenu />);
-  // });
+  const mockAxiosGet = jest.spyOn(axios, 'get');
+
+  afterEach(() => {
+    mockAxiosGet.mockRestore();
+  });
 
   it('should add repos to list', () => {
+    mockAxiosGet.mockResolvedValueOnce(MOCK_RESPONSES.getLabels);
+
     const { queryAllByTestId, getByTestId } = connectRender(
       <RepoSection />,
       {
@@ -62,6 +67,8 @@ describe('Repo section', () => {
   });
 
   it('should select a repo from list', () => {
+    mockAxiosGet.mockResolvedValueOnce(MOCK_RESPONSES.getLabels);
+
     const { queryAllByTestId } = connectRender(
       <RepoSection />,
       {

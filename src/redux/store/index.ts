@@ -3,10 +3,10 @@
 import { applyMiddleware, createStore  } from 'redux';
 import thunkMiddleware from 'redux-thunk';
 
+import { cacheService } from 'core/cacheService';
 import rootReducer from '../reducers';
-import { loadReposState } from './localStorage';
 
-const persistedReposData = loadReposState();
+const persistedReposData = cacheService.loadFromCache('repo', 'all') || [];
 
 const store = createStore(
   rootReducer,

@@ -27,6 +27,7 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
           data-testid='loadingLabels'
         >
           <LoadingSpinner />
+          a { JSON.stringify(labels) }
           <h3>Loading...</h3>
         </FlexContainer>
       </SideMenuSection>
@@ -49,7 +50,6 @@ const LabelSection: React.FC<any> = ({ fetchLabels, fetchIssues, labels, selecte
         <SectionTitle>Labels ({labels.data[selectedRepo] ? labels.data[selectedRepo].length : 0})</SectionTitle>
         <div className='divider-middle'></div>
       </FlexContainer>
-      {/* TODO maybe pass only the data */}
       <LabelList fetchIssues={fetchIssues} selectedRepo={selectedRepo} labels={labels} />
     </SideMenuSection>
   );

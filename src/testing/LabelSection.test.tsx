@@ -57,10 +57,6 @@ describe('Label section', () => {
     expect(queryByTestId('labelList')).toBeFalsy();
   });
 
-  // TODO implement
-  // it('should get cached label data, if available', () => {
-  // });
-
   it('should show an empty list if no repo was selected', () => {
     const { queryByTestId } = connectRender(
       <LabelSection />,
@@ -79,7 +75,7 @@ describe('Label section', () => {
   });
 
   it('should render a list of labels if there is a selected repo', () => {
-    const { debug, queryAllByTestId, queryByTestId } = connectRender(
+    const { queryAllByTestId, queryByTestId } = connectRender(
       <LabelSection />,
       {
         initialState: {

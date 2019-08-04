@@ -1,7 +1,9 @@
 import axios, { AxiosError } from 'axios';
 import { Dispatch } from 'redux';
 
+import { cacheService } from 'core/cacheService';
 import Label from 'core/models/Label';
+import MESSAGES from 'data/messages';
 import { setAlert } from './alertActions';
 
 export const LABEL_REQUEST_START = 'LABEL_REQUEST_START';
@@ -31,14 +33,19 @@ export const deleteLabels = (repoName: string) => (
   }
 );
 
-export const fetchLabels = (repoName: string) => (dispatch: Dispatch) => {
+export const fetchLabels = (repoName: string, refreshCache: boolean = false) => (dispatch: Dispatch) => {
   dispatch(requestStart());
 
-  return axios.get(`https://api.github.com/repos/${repoName}/labels?per_page=100`)
+  const savedData = cacheService.loadFromCache('label', repoName);
+  const request = savedData && !refreshCache ? Promise.resolve(savedData) : fetchLabelsFromApi(repoName);
+
+  return request
     .then(
       (response: any) => {
         dispatch(requestEnd());
-        const parsedResponseData: Label[] = response.data.map((data: any): Label => {
+        cacheService.saveToCache('label', repoName, response);
+        const data: any[] = response.data;
+        const parsedResponseData: Label[] = data.map((data: any): Label => {
           return {
             color: data.color,
             name: data.name,
@@ -49,9 +56,13 @@ export const fetchLabels = (repoName: string) => (dispatch: Dispatch) => {
       (error: AxiosError) => {
         dispatch(requestEnd());
         if (error.response && error.response.status === 404) {
-          dispatch(setAlert('Repository not found.', 'error'));
+          dispatch(setAlert(MESSAGES.repositoryNotFound, 'error'));
         }
-        console.log('An error occurred.', error);
+        console.log(MESSAGES.errorGeneric, error);
       },
     );
+};
+
+const fetchLabelsFromApi = (repoName: string) => {
+  return axios.get(`https://api.github.com/repos/${repoName}/labels?per_page=100`);
 };

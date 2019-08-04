@@ -98,5 +98,3 @@ const Alert: React.FC<any> = ({ alert, hideAlert }) => {
 export default connect(mapStateToProps, {
   hideAlert: alertActions.hideAlert,
 })(Alert);
-
-// export default Alert;

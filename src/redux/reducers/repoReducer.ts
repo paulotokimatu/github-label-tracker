@@ -3,7 +3,7 @@ import {
   DELETE_REPO,
 } from '../actions/repoActions';
 
-const repoReducer = (state = new Set(), action: any) => {
+const repoReducer = (state: Set<string> = new Set(), action: any) => {
   switch (action.type) {
     case ADD_REPO: {
       const newSet = new Set(state);

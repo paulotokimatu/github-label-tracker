@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Dispatch } from 'redux';
 
 import Issue from 'core/models/Issue';
+import MESSAGES from 'data/messages';
 import { selectLabel } from './uiActions';
 
 export const ISSUE_REQUEST_START = 'ISSUE_REQUEST_START';
@@ -52,7 +53,7 @@ export const fetchIssues = (repo: string, labels: string) => (dispatch: Dispatch
       },
       (error: string) => {
         dispatch(requestEnd());
-        console.log('An error occurred.', error);
+        console.log(MESSAGES.errorGeneric, error);
       },
     );
 };
