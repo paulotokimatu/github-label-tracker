@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/github-label-tracker/static/css/main.93d3a20f.chunk.css",
+    "main.js": "/github-label-tracker/static/js/main.6e6db34e.chunk.js",
+    "main.js.map": "/github-label-tracker/static/js/main.6e6db34e.chunk.js.map",
+    "runtime~main.js": "/github-label-tracker/static/js/runtime~main.6e745afd.js",
+    "runtime~main.js.map": "/github-label-tracker/static/js/runtime~main.6e745afd.js.map",
+    "static/css/2.ef4adc7a.chunk.css": "/github-label-tracker/static/css/2.ef4adc7a.chunk.css",
+    "static/js/2.4d6ab48e.chunk.js": "/github-label-tracker/static/js/2.4d6ab48e.chunk.js",
+    "static/js/2.4d6ab48e.chunk.js.map": "/github-label-tracker/static/js/2.4d6ab48e.chunk.js.map",
+    "index.html": "/github-label-tracker/index.html",
+    "precache-manifest.51506b1316de64f4e39afb7fe6fd0836.js": "/github-label-tracker/precache-manifest.51506b1316de64f4e39afb7fe6fd0836.js",
+    "service-worker.js": "/github-label-tracker/service-worker.js",
+    "static/css/2.ef4adc7a.chunk.css.map": "/github-label-tracker/static/css/2.ef4adc7a.chunk.css.map",
+    "static/css/main.93d3a20f.chunk.css.map": "/github-label-tracker/static/css/main.93d3a20f.chunk.css.map",
+    "static/media/semantic.min.css": "/github-label-tracker/static/media/outline-icons.ef60a4f6.woff"
+  }
+}
