@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/github-label-tracker/static/css/main.93d3a20f.chunk.css",
-    "main.js": "/github-label-tracker/static/js/main.6e6db34e.chunk.js",
-    "main.js.map": "/github-label-tracker/static/js/main.6e6db34e.chunk.js.map",
+    "main.css": "/github-label-tracker/static/css/main.45a2e892.chunk.css",
+    "main.js": "/github-label-tracker/static/js/main.6189781a.chunk.js",
+    "main.js.map": "/github-label-tracker/static/js/main.6189781a.chunk.js.map",
     "runtime~main.js": "/github-label-tracker/static/js/runtime~main.6e745afd.js",
     "runtime~main.js.map": "/github-label-tracker/static/js/runtime~main.6e745afd.js.map",
-    "static/css/2.ef4adc7a.chunk.css": "/github-label-tracker/static/css/2.ef4adc7a.chunk.css",
-    "static/js/2.4d6ab48e.chunk.js": "/github-label-tracker/static/js/2.4d6ab48e.chunk.js",
-    "static/js/2.4d6ab48e.chunk.js.map": "/github-label-tracker/static/js/2.4d6ab48e.chunk.js.map",
+    "static/css/2.d8d78f01.chunk.css": "/github-label-tracker/static/css/2.d8d78f01.chunk.css",
+    "static/js/2.2d864190.chunk.js": "/github-label-tracker/static/js/2.2d864190.chunk.js",
+    "static/js/2.2d864190.chunk.js.map": "/github-label-tracker/static/js/2.2d864190.chunk.js.map",
     "index.html": "/github-label-tracker/index.html",
-    "precache-manifest.51506b1316de64f4e39afb7fe6fd0836.js": "/github-label-tracker/precache-manifest.51506b1316de64f4e39afb7fe6fd0836.js",
+    "precache-manifest.5660f8543570491dc553c4dfacee3c16.js": "/github-label-tracker/precache-manifest.5660f8543570491dc553c4dfacee3c16.js",
     "service-worker.js": "/github-label-tracker/service-worker.js",
-    "static/css/2.ef4adc7a.chunk.css.map": "/github-label-tracker/static/css/2.ef4adc7a.chunk.css.map",
-    "static/css/main.93d3a20f.chunk.css.map": "/github-label-tracker/static/css/main.93d3a20f.chunk.css.map",
-    "static/media/semantic.min.css": "/github-label-tracker/static/media/outline-icons.ef60a4f6.woff"
+    "static/css/2.d8d78f01.chunk.css.map": "/github-label-tracker/static/css/2.d8d78f01.chunk.css.map",
+    "static/css/main.45a2e892.chunk.css.map": "/github-label-tracker/static/css/main.45a2e892.chunk.css.map",
+    "static/media/index.css": "/github-label-tracker/static/media/lato-latin-900italic.bd86aaa7.woff2"
   }
 }
